@@ -12,9 +12,12 @@ namespace WinFormsApp1
             ArrayViev.DataSource = database.Items;
             ArrayViev.SelectionChanged += new EventHandler(ArrayViev_SelectionChanged);
 
-
-
             FormatColumnsNames(ArrayViev);
+
+            foreach (DataGridViewColumn column in ArrayViev.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.Automatic;
+            }
         }
 
         public static void FormatColumnsNames(DataGridView dataGridView)
@@ -217,6 +220,96 @@ namespace WinFormsApp1
             {
                 buttonDeleteItem.PerformClick();
             }
-        }       
+        }
+
+        private bool ascending = true;
+        private void ArrayViev_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+
+            List<Item> items = database.Items;
+
+            var column = ArrayViev.Columns[e.ColumnIndex];
+            string sortColumn = column.Name;
+
+            if (ascending)
+            {
+                switch (sortColumn)
+                {
+                    case "Id":
+                        items.Sort((x, y) => x.Id.CompareTo(y.Id));
+                        break;
+                    case "Category":
+                        items.Sort((x, y) => string.Compare(x.Category, y.Category));
+                        break;
+                    case "Name":
+                        items.Sort((x, y) => string.Compare(x.Name, y.Name));
+                        break;
+                    case "EstimatedValue":
+                        items.Sort((x, y) => x.EstimatedValue.CompareTo(y.EstimatedValue));
+                        break;
+                    case "LoanAmount":
+                        items.Sort((x, y) => x.LoanAmount.CompareTo(y.LoanAmount));
+                        break;
+                    case "DepositDate":
+                        items.Sort((x, y) => x.DepositDate.CompareTo(y.DepositDate));
+                        break;
+                    case "StoragePeriodDays":
+                        items.Sort((x, y) => x.StoragePeriodDays.CompareTo(y.StoragePeriodDays));
+                        break;
+                    case "Status":
+                        items.Sort((x, y) => x.Status.CompareTo(y.Status));
+                        break;
+                    case "ClientId":
+                        items.Sort((x, y) => x.ClientId.CompareTo(y.ClientId));
+                        break;
+                    case "SaleReturnDate":
+                        items.Sort((x, y) => x.SaleReturnDate.CompareTo(y.SaleReturnDate));
+                        break;
+                }
+            }
+            else
+            {
+                switch (sortColumn)
+                {
+                    case "Id":
+                        items.Sort((x, y) => y.Id.CompareTo(x.Id));
+                        break;
+                    case "Category":
+                        items.Sort((x, y) => string.Compare(y.Category, x.Category));
+                        break;
+                    case "Name":
+                        items.Sort((x, y) => string.Compare(y.Name, x.Name));
+                        break;
+                    case "EstimatedValue":
+                        items.Sort((x, y) => y.EstimatedValue.CompareTo(x.EstimatedValue));
+                        break;
+                    case "LoanAmount":
+                        items.Sort((x, y) => y.LoanAmount.CompareTo(x.LoanAmount));
+                        break;
+                    case "DepositDate":
+                        items.Sort((x, y) => y.DepositDate.CompareTo(x.DepositDate));
+                        break;
+                    case "StoragePeriodDays":
+                        items.Sort((x, y) => y.StoragePeriodDays.CompareTo(x.StoragePeriodDays));
+                        break;
+                    case "Status":
+                        items.Sort((x, y) => y.Status.CompareTo(x.Status));
+                        break;
+                    case "ClientId":
+                        items.Sort((x, y) => y.ClientId.CompareTo(x.ClientId));
+                        break;
+                    case "SaleReturnDate":
+                        items.Sort((x, y) => y.SaleReturnDate.CompareTo(x.SaleReturnDate));
+                        break;
+                }
+            }
+
+            ArrayViev.DataSource = null;
+            ArrayViev.DataSource = items;
+            FormatColumnsNames(ArrayViev);
+
+            ascending = !ascending;
+        }
     }
 }

@@ -30,16 +30,17 @@ namespace WinFormsApp1
             // Ім'я
             if (!string.IsNullOrWhiteSpace(nameFilter))
             {
-                filtered = filtered.Where(item =>item.Name.Contains(nameFilter, StringComparison.OrdinalIgnoreCase));
+                filtered = filtered.Where(item => item.Name.Contains(nameFilter, StringComparison.OrdinalIgnoreCase));
             }
 
             // Категорія
             if (selectedCategory != "Усі")
-            { 
+            {
                 filtered = filtered.Where(item => item.Category == selectedCategory);
             }
             // Статус
-            if (selectedStatus != "Усі" && Enum.TryParse<ItemStatus>(selectedStatus, out var status)) { 
+            if (selectedStatus != "Усі" && Enum.TryParse<ItemStatus>(selectedStatus, out var status))
+            {
                 filtered = filtered.Where(item => item.Status == status);
             }
             // Оціночна вартість
