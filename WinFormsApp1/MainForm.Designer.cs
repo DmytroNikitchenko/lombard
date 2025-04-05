@@ -55,6 +55,7 @@
             ArrayViev.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             ArrayViev.Size = new Size(875, 583);
             ArrayViev.TabIndex = 0;
+            ArrayViev.KeyDown += ArrayViev_KeyDown;
             // 
             // buttonToAddForm
             // 
@@ -181,7 +182,7 @@
             KeyPreview = true;
             MinimumSize = new Size(950, 500);
             Name = "MainForm";
-            Text = "Ломбард";
+            Text = "Ломбард";            
             ((System.ComponentModel.ISupportInitialize)ArrayViev).EndInit();
             ResumeLayout(false);
             PerformLayout();

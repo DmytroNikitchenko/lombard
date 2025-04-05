@@ -4,25 +4,19 @@ namespace WinFormsApp1
 {
     public partial class MainForm : Form //Головне вікно
     {
-        private PawnshopDatabase database;       
+        private PawnshopDatabase database;
         public MainForm()
         {
             InitializeComponent();
             database = DatabaseManager.LoadData();
             ArrayViev.DataSource = database.Items;
             ArrayViev.SelectionChanged += new EventHandler(ArrayViev_SelectionChanged);
-            
-            this.KeyDown += new KeyEventHandler(Form_KeyDown);
+
+
 
             FormatColumnsNames(ArrayViev);
         }
-        private void Form_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Delete)
-            {
-                buttonDeleteItem.PerformClick();  
-            }
-        }
+
         public static void FormatColumnsNames(DataGridView dataGridView)
         {
             dataGridView.Columns["Id"].HeaderText = "ID";
@@ -43,7 +37,7 @@ namespace WinFormsApp1
             ArrayViev.DataSource = database.Items;
         }
         public void RefreshDataCustom(List<Item> custom)
-        {            
+        {
             ArrayViev.DataSource = custom;
         }
         private void ArrayViev_SelectionChanged(object sender, EventArgs e)
@@ -204,12 +198,25 @@ namespace WinFormsApp1
         {
             textBoxSearch.Clear();
             RefreshDataGrid();
-        }               
+        }
 
         private void buttonFilter_Click(object sender, EventArgs e)
         {
-            FilterForm filterForm = new FilterForm(this ,database);
+            FilterForm filterForm = new FilterForm(this, database);
             filterForm.Show();
         }
+
+        private void ArrayViev_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                buttonCheckInfo.PerformClick();
+            }
+            if (e.KeyCode == Keys.Delete)
+            {
+                buttonDeleteItem.PerformClick();
+            }
+        }       
     }
 }
