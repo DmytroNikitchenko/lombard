@@ -2,17 +2,26 @@
 
 namespace WinFormsApp1
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Form //Головне вікно
     {
-        private PawnshopDatabase database;
+        private PawnshopDatabase database;       
         public MainForm()
         {
             InitializeComponent();
             database = DatabaseManager.LoadData();
             ArrayViev.DataSource = database.Items;
-            this.ArrayViev.SelectionChanged += new System.EventHandler(this.ArrayViev_SelectionChanged);
+            ArrayViev.SelectionChanged += new EventHandler(ArrayViev_SelectionChanged);
+            
+            this.KeyDown += new KeyEventHandler(Form_KeyDown);
 
             FormatColumnsNames(ArrayViev);
+        }
+        private void Form_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                buttonDeleteItem.PerformClick();  
+            }
         }
         public static void FormatColumnsNames(DataGridView dataGridView)
         {
@@ -25,6 +34,7 @@ namespace WinFormsApp1
             dataGridView.Columns["Status"].HeaderText = "Статус";
             dataGridView.Columns["ClientId"].HeaderText = "ID клієнта";
             dataGridView.Columns["SaleReturnDate"].HeaderText = "Дата продажу/повернення";
+            dataGridView.Columns["Category"].HeaderText = "Категорія";
         }
 
         public void RefreshDataGrid()
@@ -32,14 +42,10 @@ namespace WinFormsApp1
             database = DatabaseManager.LoadData();
             ArrayViev.DataSource = database.Items;
         }
-
-
-        private void ArrayViev_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+        public void RefreshDataCustom(List<Item> custom)
+        {            
+            ArrayViev.DataSource = custom;
         }
-
-
         private void ArrayViev_SelectionChanged(object sender, EventArgs e)
         {
             if (ArrayViev.SelectedRows.Count > 0)
@@ -51,7 +57,6 @@ namespace WinFormsApp1
                 {
                     string status = statusCell.ToString();
 
-                    
                     bool isActive = status != ItemStatus.Повернено.ToString() && status != ItemStatus.Продано.ToString();
 
                     if (isActive)
@@ -65,7 +70,6 @@ namespace WinFormsApp1
 
                         buttonSell.Enabled = storageEndDate <= DateTime.Now;
 
-                        
                         buttonRefound.Enabled = storageEndDate > DateTime.Now;
                     }
                     else
@@ -160,12 +164,6 @@ namespace WinFormsApp1
                 MessageBox.Show("Виберіть рядок", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonSell_Click(object sender, EventArgs e)
         {
             if (ArrayViev.SelectedRows.Count > 0)
@@ -204,7 +202,14 @@ namespace WinFormsApp1
 
         private void buttonSearchClear_Click(object sender, EventArgs e)
         {
+            textBoxSearch.Clear();
             RefreshDataGrid();
+        }               
+
+        private void buttonFilter_Click(object sender, EventArgs e)
+        {
+            FilterForm filterForm = new FilterForm(this ,database);
+            filterForm.Show();
         }
     }
 }

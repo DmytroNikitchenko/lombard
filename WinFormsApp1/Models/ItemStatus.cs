@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp1.Models
 {
-    public enum ItemStatus
+    public enum ItemStatus //Іменовані константи для збереження статусу
     {
         Зберігається,
         Повернено,

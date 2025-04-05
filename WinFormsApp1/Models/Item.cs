@@ -1,9 +1,10 @@
 ﻿namespace WinFormsApp1.Models
 {
     [Serializable]
-    public class Item
+    public class Item //клас предмета
     {
         public int Id { get; set; }
+        public string Category { get; set; } = "";
         public string Name { get; set; } = "";
         public decimal EstimatedValue { get; set; }
         public decimal LoanAmount { get; set; }

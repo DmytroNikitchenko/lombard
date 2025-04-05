@@ -37,6 +37,7 @@
             buttonSearch = new Button();
             textBoxSearch = new TextBox();
             buttonSearchClear = new Button();
+            buttonFilter = new Button();
             ((System.ComponentModel.ISupportInitialize)ArrayViev).BeginInit();
             SuspendLayout();
             // 
@@ -53,13 +54,13 @@
             ArrayViev.ReadOnly = true;
             ArrayViev.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             ArrayViev.Size = new Size(875, 583);
-            ArrayViev.TabIndex = 0;            
+            ArrayViev.TabIndex = 0;
             // 
             // buttonToAddForm
             // 
             buttonToAddForm.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonToAddForm.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            buttonToAddForm.Location = new Point(881, 159);
+            buttonToAddForm.Location = new Point(881, 200);
             buttonToAddForm.Name = "buttonToAddForm";
             buttonToAddForm.Size = new Size(135, 50);
             buttonToAddForm.TabIndex = 1;
@@ -71,7 +72,7 @@
             // 
             buttonCheckInfo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonCheckInfo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            buttonCheckInfo.Location = new Point(881, 215);
+            buttonCheckInfo.Location = new Point(879, 256);
             buttonCheckInfo.Name = "buttonCheckInfo";
             buttonCheckInfo.Size = new Size(135, 50);
             buttonCheckInfo.TabIndex = 2;
@@ -95,7 +96,7 @@
             // 
             buttonRefound.Anchor = AnchorStyles.Right;
             buttonRefound.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            buttonRefound.Location = new Point(881, 324);
+            buttonRefound.Location = new Point(881, 369);
             buttonRefound.Name = "buttonRefound";
             buttonRefound.Size = new Size(135, 50);
             buttonRefound.TabIndex = 5;
@@ -107,7 +108,7 @@
             // 
             buttonSell.Anchor = AnchorStyles.Right;
             buttonSell.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            buttonSell.Location = new Point(881, 380);
+            buttonSell.Location = new Point(881, 425);
             buttonSell.Name = "buttonSell";
             buttonSell.Size = new Size(135, 50);
             buttonSell.TabIndex = 6;
@@ -148,12 +149,25 @@
             buttonSearchClear.UseVisualStyleBackColor = true;
             buttonSearchClear.Click += buttonSearchClear_Click;
             // 
+            // buttonFilter
+            // 
+            buttonFilter.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonFilter.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            buttonFilter.Location = new Point(880, 137);
+            buttonFilter.Name = "buttonFilter";
+            buttonFilter.Size = new Size(135, 50);
+            buttonFilter.TabIndex = 10;
+            buttonFilter.Text = "Фільтрація";
+            buttonFilter.UseVisualStyleBackColor = true;
+            buttonFilter.Click += buttonFilter_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(1026, 583);
+            Controls.Add(buttonFilter);
             Controls.Add(buttonSearchClear);
             Controls.Add(textBoxSearch);
             Controls.Add(buttonSearch);
@@ -164,10 +178,10 @@
             Controls.Add(buttonToAddForm);
             Controls.Add(ArrayViev);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            KeyPreview = true;
             MinimumSize = new Size(950, 500);
             Name = "MainForm";
             Text = "Ломбард";
-            Load += MainForm_Load;
             ((System.ComponentModel.ISupportInitialize)ArrayViev).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -184,5 +198,6 @@
         private Button buttonSearch;
         private TextBox textBoxSearch;
         private Button buttonSearchClear;
+        private Button buttonFilter;
     }
 }

@@ -2,7 +2,7 @@
 
 namespace WinFormsApp1
 {
-    public partial class FullInfo : Form
+    public partial class FullInfo : Form //Форма з повною інформацією
     {
         public FullInfo(DataGridViewRow row, PawnshopDatabase database)
         {
@@ -19,7 +19,7 @@ namespace WinFormsApp1
             textBox5.Text = row.Cells["DepositDate"].Value.ToString();
             textBox6.Text = row.Cells["StoragePeriodDays"].Value.ToString();
             textBox7.Text = row.Cells["Status"].Value.ToString();
-
+            textBox12.Text = row.Cells["Category"].Value.ToString();
 
             if (row.Cells["Status"].Value.ToString() == "Зберігається")
             {

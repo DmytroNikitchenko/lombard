@@ -1,7 +1,7 @@
 ﻿namespace WinFormsApp1.Models
 {
     [Serializable]
-    public class PawnshopDatabase
+    public class PawnshopDatabase //Клас бази даних
     {
         public List<Client> Clients { get; set; } = new List<Client>();
         public List<Item> Items { get; set; } = new List<Item>();

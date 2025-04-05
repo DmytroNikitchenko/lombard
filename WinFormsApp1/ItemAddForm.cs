@@ -3,7 +3,7 @@ using WinFormsApp1.Models;
 
 namespace WinFormsApp1
 {
-    public partial class ItemAddForm : Form
+    public partial class ItemAddForm : Form //Форма додавання елементів
     {
         private MainForm mainForm;
         private PawnshopDatabase database;
@@ -13,13 +13,7 @@ namespace WinFormsApp1
             database = DatabaseManager.LoadData();
             mainForm = form;
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private int GetNextItemId(List<Item> items)
+        private static int GetNextItemId(List<Item> items)
         {
             int newId = 1;
             var usedIds = items.Select(i => i.Id).OrderBy(id => id).ToList();
@@ -80,7 +74,8 @@ namespace WinFormsApp1
                     DepositDate = DateTime.Now,
                     StoragePeriodDays = Convert.ToInt32(textBoxStoragePeriodDays.Text),
                     Status = ItemStatus.Зберігається,
-                    ClientId = client.Id
+                    ClientId = client.Id,
+                    Category = comboBoxCategories.SelectedItem.ToString()
                 };
 
 
@@ -89,21 +84,56 @@ namespace WinFormsApp1
                 DatabaseManager.SaveData(database);
 
 
-                database.Items.Add(newItem);
-                
-                DatabaseManager.SaveData(database);
-
-           
                 textBoxItemName.Clear();
                 textBoxFullName.Clear();
                 textBoxPhone.Clear();
                 textBoxEstimatedValue.Clear();
                 textBoxLoanAmount.Clear();
                 textBoxStoragePeriodDays.Clear();
+                comboBoxCategories.SelectedIndex = -1;
 
                 mainForm.RefreshDataGrid();
             }
         }
 
+        private void textBoxPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxStoragePeriodDays_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxLoanAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxEstimatedValue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxFullName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {                
+                e.Handled = true;
+            }
+        }
     }
 }

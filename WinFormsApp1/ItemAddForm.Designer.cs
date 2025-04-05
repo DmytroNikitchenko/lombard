@@ -41,6 +41,8 @@
             label5 = new Label();
             textBoxPhone = new TextBox();
             label6 = new Label();
+            comboBoxCategories = new ComboBox();
+            label7 = new Label();
             SuspendLayout();
             // 
             // AddItemButton
@@ -63,7 +65,6 @@
             textBoxItemName.Name = "textBoxItemName";
             textBoxItemName.Size = new Size(100, 23);
             textBoxItemName.TabIndex = 1;
-            textBoxItemName.TextChanged += textBox1_TextChanged;
             // 
             // textBoxFullName
             // 
@@ -72,6 +73,7 @@
             textBoxFullName.Name = "textBoxFullName";
             textBoxFullName.Size = new Size(100, 23);
             textBoxFullName.TabIndex = 2;
+            textBoxFullName.KeyPress += textBoxFullName_KeyPress;
             // 
             // textBoxEstimatedValue
             // 
@@ -79,6 +81,7 @@
             textBoxEstimatedValue.Name = "textBoxEstimatedValue";
             textBoxEstimatedValue.Size = new Size(100, 23);
             textBoxEstimatedValue.TabIndex = 3;
+            textBoxEstimatedValue.KeyPress += textBoxEstimatedValue_KeyPress;
             // 
             // label1
             // 
@@ -113,6 +116,7 @@
             textBoxLoanAmount.Name = "textBoxLoanAmount";
             textBoxLoanAmount.Size = new Size(100, 23);
             textBoxLoanAmount.TabIndex = 7;
+            textBoxLoanAmount.KeyPress += textBoxLoanAmount_KeyPress;
             // 
             // textBoxStoragePeriodDays
             // 
@@ -120,6 +124,7 @@
             textBoxStoragePeriodDays.Name = "textBoxStoragePeriodDays";
             textBoxStoragePeriodDays.Size = new Size(100, 23);
             textBoxStoragePeriodDays.TabIndex = 8;
+            textBoxStoragePeriodDays.KeyPress += textBoxStoragePeriodDays_KeyPress;
             // 
             // label4
             // 
@@ -142,10 +147,11 @@
             // textBoxPhone
             // 
             textBoxPhone.Location = new Point(123, 154);
-            textBoxPhone.MaxLength = 13;
+            textBoxPhone.MaxLength = 10;
             textBoxPhone.Name = "textBoxPhone";
             textBoxPhone.Size = new Size(100, 23);
             textBoxPhone.TabIndex = 11;
+            textBoxPhone.KeyPress += textBoxPhone_KeyPress;
             // 
             // label6
             // 
@@ -156,11 +162,32 @@
             label6.TabIndex = 12;
             label6.Text = "Номер телефону";
             // 
+            // comboBoxCategories
+            // 
+            comboBoxCategories.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxCategories.FormattingEnabled = true;
+            comboBoxCategories.Items.AddRange(new object[] { "Золото", "Срібло", "Коштовності", "Годинники", "Електроніка", "Автомобілі", "Бутова техніка", "Музичні інструменти", "Колекційні предмети", "Зброя", "Предмети мистецтва", "Меблі", "Гроші монети банкноти", "Одяг", "Інше" });
+            comboBoxCategories.Location = new Point(340, 9);
+            comboBoxCategories.Name = "comboBoxCategories";
+            comboBoxCategories.Size = new Size(156, 23);
+            comboBoxCategories.TabIndex = 13;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(272, 12);
+            label7.Name = "label7";
+            label7.Size = new Size(62, 15);
+            label7.TabIndex = 14;
+            label7.Text = "Категорія:";
+            // 
             // ItemAddForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label7);
+            Controls.Add(comboBoxCategories);
             Controls.Add(label6);
             Controls.Add(textBoxPhone);
             Controls.Add(label5);
@@ -174,7 +201,7 @@
             Controls.Add(textBoxFullName);
             Controls.Add(textBoxItemName);
             Controls.Add(AddItemButton);
-            MinimumSize = new Size(444, 235);
+            MinimumSize = new Size(548, 237);
             Name = "ItemAddForm";
             Text = "Додавання предмету";
             ResumeLayout(false);
@@ -196,5 +223,7 @@
         private Label label5;
         private TextBox textBoxPhone;
         private Label label6;
+        private ComboBox comboBoxCategories;
+        private Label label7;
     }
 }

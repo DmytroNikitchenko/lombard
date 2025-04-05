@@ -50,13 +50,15 @@
             textBox9 = new TextBox();
             textBox10 = new TextBox();
             textBox11 = new TextBox();
+            textBox12 = new TextBox();
+            label1 = new Label();
             SuspendLayout();
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 12F);
-            label11.Location = new Point(12, 258);
+            label11.Location = new Point(12, 294);
             label11.Name = "label11";
             label11.Size = new Size(188, 21);
             label11.TabIndex = 19;
@@ -66,7 +68,7 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 12F);
-            label12.Location = new Point(12, 237);
+            label12.Location = new Point(12, 273);
             label12.Name = "label12";
             label12.Size = new Size(95, 21);
             label12.TabIndex = 18;
@@ -76,7 +78,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 12F);
-            label13.Location = new Point(12, 216);
+            label13.Location = new Point(12, 252);
             label13.Name = "label13";
             label13.Size = new Size(83, 21);
             label13.TabIndex = 17;
@@ -86,7 +88,7 @@
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 12F);
-            label14.Location = new Point(12, 135);
+            label14.Location = new Point(12, 156);
             label14.Name = "label14";
             label14.Size = new Size(60, 21);
             label14.TabIndex = 16;
@@ -96,7 +98,7 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 12F);
-            label15.Location = new Point(12, 114);
+            label15.Location = new Point(12, 135);
             label15.Name = "label15";
             label15.Size = new Size(153, 21);
             label15.TabIndex = 15;
@@ -106,7 +108,7 @@
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI", 12F);
-            label16.Location = new Point(12, 93);
+            label16.Location = new Point(12, 114);
             label16.Name = "label16";
             label16.Size = new Size(115, 21);
             label16.TabIndex = 14;
@@ -116,7 +118,7 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI", 12F);
-            label17.Location = new Point(12, 72);
+            label17.Location = new Point(12, 93);
             label17.Name = "label17";
             label17.Size = new Size(112, 21);
             label17.TabIndex = 13;
@@ -126,7 +128,7 @@
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI", 12F);
-            label18.Location = new Point(12, 51);
+            label18.Location = new Point(12, 72);
             label18.Name = "label18";
             label18.Size = new Size(145, 21);
             label18.TabIndex = 12;
@@ -156,7 +158,7 @@
             // 
             label21.AutoSize = true;
             label21.Font = new Font("Segoe UI", 12F);
-            label21.Location = new Point(12, 170);
+            label21.Location = new Point(12, 206);
             label21.Name = "label21";
             label21.Size = new Size(207, 21);
             label21.TabIndex = 21;
@@ -186,7 +188,7 @@
             // 
             textBox3.BackColor = SystemColors.Window;
             textBox3.ForeColor = SystemColors.WindowText;
-            textBox3.Location = new Point(241, 52);
+            textBox3.Location = new Point(241, 73);
             textBox3.Name = "textBox3";
             textBox3.ReadOnly = true;
             textBox3.Size = new Size(298, 23);
@@ -196,7 +198,7 @@
             // 
             textBox4.BackColor = SystemColors.Window;
             textBox4.ForeColor = SystemColors.WindowText;
-            textBox4.Location = new Point(241, 73);
+            textBox4.Location = new Point(241, 94);
             textBox4.Name = "textBox4";
             textBox4.ReadOnly = true;
             textBox4.Size = new Size(298, 23);
@@ -206,7 +208,7 @@
             // 
             textBox5.BackColor = SystemColors.Window;
             textBox5.ForeColor = SystemColors.WindowText;
-            textBox5.Location = new Point(241, 94);
+            textBox5.Location = new Point(241, 115);
             textBox5.Name = "textBox5";
             textBox5.ReadOnly = true;
             textBox5.Size = new Size(298, 23);
@@ -216,7 +218,7 @@
             // 
             textBox6.BackColor = SystemColors.Window;
             textBox6.ForeColor = SystemColors.WindowText;
-            textBox6.Location = new Point(241, 115);
+            textBox6.Location = new Point(241, 136);
             textBox6.Name = "textBox6";
             textBox6.ReadOnly = true;
             textBox6.Size = new Size(298, 23);
@@ -226,7 +228,7 @@
             // 
             textBox7.BackColor = SystemColors.Window;
             textBox7.ForeColor = SystemColors.WindowText;
-            textBox7.Location = new Point(241, 136);
+            textBox7.Location = new Point(241, 157);
             textBox7.Name = "textBox7";
             textBox7.ReadOnly = true;
             textBox7.Size = new Size(298, 23);
@@ -236,7 +238,7 @@
             // 
             textBox8.BackColor = SystemColors.Window;
             textBox8.ForeColor = SystemColors.WindowText;
-            textBox8.Location = new Point(241, 171);
+            textBox8.Location = new Point(241, 207);
             textBox8.Name = "textBox8";
             textBox8.ReadOnly = true;
             textBox8.Size = new Size(298, 23);
@@ -246,7 +248,7 @@
             // 
             textBox9.BackColor = SystemColors.Window;
             textBox9.ForeColor = SystemColors.WindowText;
-            textBox9.Location = new Point(241, 217);
+            textBox9.Location = new Point(241, 253);
             textBox9.Name = "textBox9";
             textBox9.ReadOnly = true;
             textBox9.Size = new Size(298, 23);
@@ -256,7 +258,7 @@
             // 
             textBox10.BackColor = SystemColors.Window;
             textBox10.ForeColor = SystemColors.WindowText;
-            textBox10.Location = new Point(241, 238);
+            textBox10.Location = new Point(241, 274);
             textBox10.Name = "textBox10";
             textBox10.ReadOnly = true;
             textBox10.Size = new Size(298, 23);
@@ -266,17 +268,39 @@
             // 
             textBox11.BackColor = SystemColors.Window;
             textBox11.ForeColor = SystemColors.WindowText;
-            textBox11.Location = new Point(241, 259);
+            textBox11.Location = new Point(241, 295);
             textBox11.Name = "textBox11";
             textBox11.ReadOnly = true;
             textBox11.Size = new Size(298, 23);
             textBox11.TabIndex = 32;
+            // 
+            // textBox12
+            // 
+            textBox12.BackColor = SystemColors.Window;
+            textBox12.ForeColor = SystemColors.WindowText;
+            textBox12.Location = new Point(241, 52);
+            textBox12.Name = "textBox12";
+            textBox12.ReadOnly = true;
+            textBox12.Size = new Size(298, 23);
+            textBox12.TabIndex = 34;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F);
+            label1.Location = new Point(12, 51);
+            label1.Name = "label1";
+            label1.Size = new Size(81, 21);
+            label1.TabIndex = 33;
+            label1.Text = "Категорія:";
             // 
             // FullInfo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(854, 426);
+            Controls.Add(textBox12);
+            Controls.Add(label1);
             Controls.Add(textBox11);
             Controls.Add(textBox10);
             Controls.Add(textBox9);
@@ -299,11 +323,9 @@
             Controls.Add(label18);
             Controls.Add(label19);
             Controls.Add(label20);
-            MinimumSize = new Size(569, 335);
-            Name = "FullInfo";                        
-
+            MinimumSize = new Size(569, 368);
+            Name = "FullInfo";
             Text = "Повна інформація";
-
             ResumeLayout(false);
             PerformLayout();
         }
@@ -331,5 +353,7 @@
         private TextBox textBox9;
         private TextBox textBox10;
         private TextBox textBox11;
+        private TextBox textBox12;
+        private Label label1;
     }
 }
