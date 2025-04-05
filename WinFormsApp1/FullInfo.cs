@@ -25,7 +25,6 @@ namespace WinFormsApp1
             {
                 textBox8.Visible = false;
                 label21.Visible = false;
-
             }
             else
             {
