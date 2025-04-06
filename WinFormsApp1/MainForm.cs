@@ -41,7 +41,7 @@ namespace WinFormsApp1
         }
         public void RefreshDataCustom(List<Item> custom)
         {
-            ArrayViev.DataSource = custom;
+            ArrayViev.DataSource = custom;            
         }
         private void ArrayViev_SelectionChanged(object sender, EventArgs e)
         {
@@ -198,8 +198,7 @@ namespace WinFormsApp1
         }
 
         private void buttonSearchClear_Click(object sender, EventArgs e)
-        {
-            textBoxSearch.Clear();
+        {            
             RefreshDataGrid();
         }
 

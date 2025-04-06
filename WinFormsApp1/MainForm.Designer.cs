@@ -62,7 +62,7 @@
             // 
             buttonToAddForm.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonToAddForm.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            buttonToAddForm.Location = new Point(881, 200);
+            buttonToAddForm.Location = new Point(880, 212);
             buttonToAddForm.Name = "buttonToAddForm";
             buttonToAddForm.Size = new Size(135, 50);
             buttonToAddForm.TabIndex = 1;
@@ -74,7 +74,7 @@
             // 
             buttonCheckInfo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonCheckInfo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            buttonCheckInfo.Location = new Point(879, 256);
+            buttonCheckInfo.Location = new Point(878, 268);
             buttonCheckInfo.Name = "buttonCheckInfo";
             buttonCheckInfo.Size = new Size(135, 50);
             buttonCheckInfo.TabIndex = 2;
@@ -147,7 +147,7 @@
             buttonSearchClear.Name = "buttonSearchClear";
             buttonSearchClear.Size = new Size(135, 30);
             buttonSearchClear.TabIndex = 9;
-            buttonSearchClear.Text = "Скинути пошук";
+            buttonSearchClear.Text = "Повернути вид";
             buttonSearchClear.UseVisualStyleBackColor = true;
             buttonSearchClear.Click += buttonSearchClear_Click;
             // 
@@ -155,7 +155,7 @@
             // 
             buttonFilter.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonFilter.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            buttonFilter.Location = new Point(880, 137);
+            buttonFilter.Location = new Point(880, 133);
             buttonFilter.Name = "buttonFilter";
             buttonFilter.Size = new Size(135, 50);
             buttonFilter.TabIndex = 10;

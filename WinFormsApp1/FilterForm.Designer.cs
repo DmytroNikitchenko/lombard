@@ -55,7 +55,6 @@
             textBoxSearchName.Name = "textBoxSearchName";
             textBoxSearchName.Size = new Size(200, 29);
             textBoxSearchName.TabIndex = 0;
-            textBoxSearchName.Text = "comboBoxCategory";
             // 
             // comboBoxCategory
             // 
@@ -83,6 +82,7 @@
             // 
             numericUpDownMinValue.Font = new Font("Segoe UI", 12F);
             numericUpDownMinValue.Location = new Point(193, 152);
+            numericUpDownMinValue.Maximum = new decimal(new int[] { 268435455, 1042612833, 542101086, 0 });
             numericUpDownMinValue.Name = "numericUpDownMinValue";
             numericUpDownMinValue.Size = new Size(200, 29);
             numericUpDownMinValue.TabIndex = 3;
@@ -91,10 +91,11 @@
             // 
             numericUpDownMaxValue.Font = new Font("Segoe UI", 12F);
             numericUpDownMaxValue.Location = new Point(193, 181);
-            numericUpDownMaxValue.Maximum = new decimal(new int[] { 100000000, 0, 0, 0 });
+            numericUpDownMaxValue.Maximum = new decimal(new int[] { 268435455, 1042612833, 542101086, 0 });
             numericUpDownMaxValue.Name = "numericUpDownMaxValue";
             numericUpDownMaxValue.Size = new Size(200, 29);
             numericUpDownMaxValue.TabIndex = 4;
+            numericUpDownMaxValue.Value = new decimal(new int[] { 1000, 0, 0, 0 });
             // 
             // dateTimePickerFrom
             // 
