@@ -166,7 +166,7 @@
             // 
             comboBoxCategories.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxCategories.FormattingEnabled = true;
-            comboBoxCategories.Items.AddRange(new object[] { "Золото", "Срібло", "Коштовності", "Годинники", "Електроніка", "Автомобілі", "Бутова техніка", "Музичні інструменти", "Колекційні предмети", "Зброя", "Предмети мистецтва", "Меблі", "Гроші монети банкноти", "Одяг", "Інше" });
+            comboBoxCategories.Items.AddRange(new object[] { "Золото", "Срібло", "Коштовності", "Годинники", "Електроніка", "Автомобілі", "Побутова техніка", "Музичні інструменти", "Колекційні предмети", "Зброя", "Предмети мистецтва", "Меблі", "Гроші, монети, банкноти", "Одяг", "Інше" });
             comboBoxCategories.Location = new Point(356, 9);
             comboBoxCategories.Name = "comboBoxCategories";
             comboBoxCategories.Size = new Size(156, 23);
