@@ -1,4 +1,5 @@
-﻿using WinFormsApp1.Models;
+﻿using System.Windows.Forms;
+using WinFormsApp1.Models;
 
 namespace WinFormsApp1
 {
@@ -12,12 +13,7 @@ namespace WinFormsApp1
             ArrayViev.DataSource = database.Items;
             ArrayViev.SelectionChanged += new EventHandler(ArrayViev_SelectionChanged);
 
-            FormatColumnsNames(ArrayViev);
-
-            foreach (DataGridViewColumn column in ArrayViev.Columns)
-            {
-                column.SortMode = DataGridViewColumnSortMode.Automatic;
-            }
+            FormatColumnsNames(ArrayViev);            
         }
 
         public static void FormatColumnsNames(DataGridView dataGridView)
@@ -224,8 +220,6 @@ namespace WinFormsApp1
         private bool ascending = true;
         private void ArrayViev_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-
-
             List<Item> items = database.Items;
 
             var column = ArrayViev.Columns[e.ColumnIndex];
