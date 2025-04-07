@@ -60,7 +60,7 @@
             // 
             // textBoxItemName
             // 
-            textBoxItemName.Location = new Point(123, 9);
+            textBoxItemName.Location = new Point(158, 9);
             textBoxItemName.MaxLength = 255;
             textBoxItemName.Name = "textBoxItemName";
             textBoxItemName.Size = new Size(100, 23);
@@ -68,7 +68,7 @@
             // 
             // textBoxFullName
             // 
-            textBoxFullName.Location = new Point(123, 38);
+            textBoxFullName.Location = new Point(158, 38);
             textBoxFullName.MaxLength = 255;
             textBoxFullName.Name = "textBoxFullName";
             textBoxFullName.Size = new Size(100, 23);
@@ -77,7 +77,7 @@
             // 
             // textBoxEstimatedValue
             // 
-            textBoxEstimatedValue.Location = new Point(123, 67);
+            textBoxEstimatedValue.Location = new Point(158, 67);
             textBoxEstimatedValue.Name = "textBoxEstimatedValue";
             textBoxEstimatedValue.Size = new Size(100, 23);
             textBoxEstimatedValue.TabIndex = 3;
@@ -106,13 +106,13 @@
             label3.AutoSize = true;
             label3.Location = new Point(12, 67);
             label3.Name = "label3";
-            label3.Size = new Size(107, 15);
+            label3.Size = new Size(137, 15);
             label3.TabIndex = 6;
-            label3.Text = "Оціночна вартість";
+            label3.Text = "Оціночна вартість (грн)";
             // 
             // textBoxLoanAmount
             // 
-            textBoxLoanAmount.Location = new Point(123, 96);
+            textBoxLoanAmount.Location = new Point(158, 96);
             textBoxLoanAmount.Name = "textBoxLoanAmount";
             textBoxLoanAmount.Size = new Size(100, 23);
             textBoxLoanAmount.TabIndex = 7;
@@ -120,7 +120,7 @@
             // 
             // textBoxStoragePeriodDays
             // 
-            textBoxStoragePeriodDays.Location = new Point(123, 125);
+            textBoxStoragePeriodDays.Location = new Point(158, 125);
             textBoxStoragePeriodDays.Name = "textBoxStoragePeriodDays";
             textBoxStoragePeriodDays.Size = new Size(100, 23);
             textBoxStoragePeriodDays.TabIndex = 8;
@@ -131,22 +131,22 @@
             label4.AutoSize = true;
             label4.Location = new Point(12, 96);
             label4.Name = "label4";
-            label4.Size = new Size(82, 15);
+            label4.Size = new Size(115, 15);
             label4.TabIndex = 9;
-            label4.Text = "Сума кредиту";
+            label4.Text = "Сума кредиту (грн.)";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Location = new Point(12, 125);
             label5.Name = "label5";
-            label5.Size = new Size(102, 15);
+            label5.Size = new Size(129, 15);
             label5.TabIndex = 10;
-            label5.Text = "Строк зберігання";
+            label5.Text = "Строк зберігання (дн.)";
             // 
             // textBoxPhone
             // 
-            textBoxPhone.Location = new Point(123, 154);
+            textBoxPhone.Location = new Point(158, 154);
             textBoxPhone.MaxLength = 10;
             textBoxPhone.Name = "textBoxPhone";
             textBoxPhone.Size = new Size(100, 23);
@@ -167,7 +167,7 @@
             comboBoxCategories.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxCategories.FormattingEnabled = true;
             comboBoxCategories.Items.AddRange(new object[] { "Золото", "Срібло", "Коштовності", "Годинники", "Електроніка", "Автомобілі", "Бутова техніка", "Музичні інструменти", "Колекційні предмети", "Зброя", "Предмети мистецтва", "Меблі", "Гроші монети банкноти", "Одяг", "Інше" });
-            comboBoxCategories.Location = new Point(340, 9);
+            comboBoxCategories.Location = new Point(356, 9);
             comboBoxCategories.Name = "comboBoxCategories";
             comboBoxCategories.Size = new Size(156, 23);
             comboBoxCategories.TabIndex = 13;
@@ -175,7 +175,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(272, 12);
+            label7.Location = new Point(288, 12);
             label7.Name = "label7";
             label7.Size = new Size(62, 15);
             label7.TabIndex = 14;

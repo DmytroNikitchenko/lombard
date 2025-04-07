@@ -50,7 +50,7 @@
             // textBoxSearchName
             // 
             textBoxSearchName.Font = new Font("Segoe UI", 12F);
-            textBoxSearchName.Location = new Point(193, 9);
+            textBoxSearchName.Location = new Point(201, 9);
             textBoxSearchName.MaxLength = 255;
             textBoxSearchName.Name = "textBoxSearchName";
             textBoxSearchName.Size = new Size(200, 29);
@@ -62,7 +62,7 @@
             comboBoxCategory.Font = new Font("Segoe UI", 12F);
             comboBoxCategory.FormattingEnabled = true;
             comboBoxCategory.Items.AddRange(new object[] { "Усі", "Золото", "Срібло", "Коштовності", "Годинники", "Електроніка", "Автомобілі", "Бутова техніка", "Музичні інструменти", "Колекційні предмети", "Зброя", "Предмети мистецтва", "Меблі", "Гроші монети банкноти", "Одяг", "Інше" });
-            comboBoxCategory.Location = new Point(193, 61);
+            comboBoxCategory.Location = new Point(201, 61);
             comboBoxCategory.Name = "comboBoxCategory";
             comboBoxCategory.Size = new Size(200, 29);
             comboBoxCategory.TabIndex = 1;
@@ -73,7 +73,7 @@
             comboBoxStatus.Font = new Font("Segoe UI", 12F);
             comboBoxStatus.FormattingEnabled = true;
             comboBoxStatus.Items.AddRange(new object[] { "Усі", "Зберігається", "Повернено", "Продано" });
-            comboBoxStatus.Location = new Point(193, 90);
+            comboBoxStatus.Location = new Point(201, 90);
             comboBoxStatus.Name = "comboBoxStatus";
             comboBoxStatus.Size = new Size(200, 29);
             comboBoxStatus.TabIndex = 2;
@@ -81,7 +81,7 @@
             // numericUpDownMinValue
             // 
             numericUpDownMinValue.Font = new Font("Segoe UI", 12F);
-            numericUpDownMinValue.Location = new Point(193, 152);
+            numericUpDownMinValue.Location = new Point(201, 152);
             numericUpDownMinValue.Maximum = new decimal(new int[] { 268435455, 1042612833, 542101086, 0 });
             numericUpDownMinValue.Name = "numericUpDownMinValue";
             numericUpDownMinValue.Size = new Size(200, 29);
@@ -90,7 +90,7 @@
             // numericUpDownMaxValue
             // 
             numericUpDownMaxValue.Font = new Font("Segoe UI", 12F);
-            numericUpDownMaxValue.Location = new Point(193, 181);
+            numericUpDownMaxValue.Location = new Point(201, 181);
             numericUpDownMaxValue.Maximum = new decimal(new int[] { 268435455, 1042612833, 542101086, 0 });
             numericUpDownMaxValue.Name = "numericUpDownMaxValue";
             numericUpDownMaxValue.Size = new Size(200, 29);
@@ -100,7 +100,7 @@
             // dateTimePickerFrom
             // 
             dateTimePickerFrom.Font = new Font("Segoe UI", 12F);
-            dateTimePickerFrom.Location = new Point(193, 226);
+            dateTimePickerFrom.Location = new Point(201, 226);
             dateTimePickerFrom.Name = "dateTimePickerFrom";
             dateTimePickerFrom.Size = new Size(200, 29);
             dateTimePickerFrom.TabIndex = 5;
@@ -108,7 +108,7 @@
             // dateTimePickerTo
             // 
             dateTimePickerTo.Font = new Font("Segoe UI", 12F);
-            dateTimePickerTo.Location = new Point(193, 255);
+            dateTimePickerTo.Location = new Point(201, 255);
             dateTimePickerTo.Name = "dateTimePickerTo";
             dateTimePickerTo.Size = new Size(200, 29);
             dateTimePickerTo.TabIndex = 6;
@@ -161,9 +161,9 @@
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label4.Location = new Point(12, 154);
             label4.Name = "label4";
-            label4.Size = new Size(131, 21);
+            label4.Size = new Size(172, 21);
             label4.TabIndex = 11;
-            label4.Text = "Мін. оц. вартість:";
+            label4.Text = "Мін. оц. вартість (грн.):";
             // 
             // label5
             // 
@@ -171,9 +171,9 @@
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label5.Location = new Point(12, 181);
             label5.Name = "label5";
-            label5.Size = new Size(141, 21);
+            label5.Size = new Size(182, 21);
             label5.TabIndex = 12;
-            label5.Text = "Макс. оц. вартість:";
+            label5.Text = "Макс. оц. вартість (грн.):";
             // 
             // label6
             // 

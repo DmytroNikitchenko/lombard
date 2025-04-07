@@ -100,9 +100,9 @@
             label15.Font = new Font("Segoe UI", 12F);
             label15.Location = new Point(12, 135);
             label15.Name = "label15";
-            label15.Size = new Size(153, 21);
+            label15.Size = new Size(188, 21);
             label15.TabIndex = 15;
-            label15.Text = "Термін збереження:";
+            label15.Text = "Термін збереження (дн.):";
             // 
             // label16
             // 
@@ -120,9 +120,9 @@
             label17.Font = new Font("Segoe UI", 12F);
             label17.Location = new Point(12, 93);
             label17.Name = "label17";
-            label17.Size = new Size(112, 21);
+            label17.Size = new Size(153, 21);
             label17.TabIndex = 13;
-            label17.Text = "Сума кредиту:";
+            label17.Text = "Сума кредиту (грн.):";
             // 
             // label18
             // 
@@ -130,9 +130,9 @@
             label18.Font = new Font("Segoe UI", 12F);
             label18.Location = new Point(12, 72);
             label18.Name = "label18";
-            label18.Size = new Size(145, 21);
+            label18.Size = new Size(186, 21);
             label18.TabIndex = 12;
-            label18.Text = "Оціночна вартість:";
+            label18.Text = "Оціночна вартість (грн.):";
             // 
             // label19
             // 
