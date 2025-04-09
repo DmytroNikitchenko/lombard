@@ -20,8 +20,8 @@ namespace WinFormsApp1
         {
             dataGridView.Columns["Id"].HeaderText = "ID";
             dataGridView.Columns["Name"].HeaderText = "Назва";
-            dataGridView.Columns["EstimatedValue"].HeaderText = "Оцінка";
-            dataGridView.Columns["LoanAmount"].HeaderText = "Сума кредиту";
+            dataGridView.Columns["EstimatedValue"].HeaderText = "Оцінка (грн.)";
+            dataGridView.Columns["LoanAmount"].HeaderText = "Сума кредиту (грн.)";
             dataGridView.Columns["DepositDate"].HeaderText = "Дата внеску";
             dataGridView.Columns["StoragePeriodDays"].HeaderText = "Строк зберігання (дн.)";
             dataGridView.Columns["Status"].HeaderText = "Статус";
