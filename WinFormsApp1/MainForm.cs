@@ -1,5 +1,4 @@
-﻿using System.Windows.Forms;
-using WinFormsApp1.Models;
+﻿using WinFormsApp1.Models;
 
 namespace WinFormsApp1
 {
@@ -305,9 +304,12 @@ namespace WinFormsApp1
             ascending = !ascending;
         }
 
-        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        private void textBoxSearch_KeyDown(object sender, KeyEventArgs e)
         {
-            buttonSearch.PerformClick();
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonSearch.PerformClick();
+            }
         }
     }
 }

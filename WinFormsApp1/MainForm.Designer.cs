@@ -138,7 +138,7 @@
             textBoxSearch.Name = "textBoxSearch";
             textBoxSearch.Size = new Size(133, 23);
             textBoxSearch.TabIndex = 8;
-            textBoxSearch.TextChanged += textBoxSearch_TextChanged;
+            textBoxSearch.KeyDown += textBoxSearch_KeyDown;
             // 
             // buttonSearchClear
             // 
