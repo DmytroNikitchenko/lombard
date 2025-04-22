@@ -13,7 +13,7 @@ namespace WinFormsApp1
             ArrayViev.DataSource = database.Items;
             ArrayViev.SelectionChanged += new EventHandler(ArrayViev_SelectionChanged);
 
-            FormatColumnsNames(ArrayViev);            
+            FormatColumnsNames(ArrayViev);
         }
 
         public static void FormatColumnsNames(DataGridView dataGridView)
@@ -37,7 +37,7 @@ namespace WinFormsApp1
         }
         public void RefreshDataCustom(List<Item> custom)
         {
-            ArrayViev.DataSource = custom;            
+            ArrayViev.DataSource = custom;
         }
         private void ArrayViev_SelectionChanged(object sender, EventArgs e)
         {
@@ -194,7 +194,7 @@ namespace WinFormsApp1
         }
 
         private void buttonSearchClear_Click(object sender, EventArgs e)
-        {            
+        {
             RefreshDataGrid();
         }
 
@@ -303,6 +303,11 @@ namespace WinFormsApp1
             FormatColumnsNames(ArrayViev);
 
             ascending = !ascending;
+        }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            buttonSearch.PerformClick();
         }
     }
 }
