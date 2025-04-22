@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp1
+﻿namespace lombard.Viev
 {
     partial class ItemAddForm
     {

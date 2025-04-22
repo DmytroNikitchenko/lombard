@@ -1,6 +1,6 @@
-﻿using WinFormsApp1.Models;
+﻿using lombard.Models;
 
-namespace WinFormsApp1
+namespace lombard.Viev
 {
     public partial class FilterForm : Form //форма для фільтрації
     {

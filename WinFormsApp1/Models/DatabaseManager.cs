@@ -1,7 +1,6 @@
 ﻿using System.Text.Json;
-using WinFormsApp1.Models;
 
-namespace WinFormsApp1
+namespace lombard.Models
 {
     public class DatabaseManager //клас для керування базою даних
     {

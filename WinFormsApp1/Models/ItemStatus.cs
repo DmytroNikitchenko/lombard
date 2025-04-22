@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp1.Models
+﻿namespace lombard.Models
 {
     public enum ItemStatus //Іменовані константи для збереження статусу
     {

@@ -1,4 +1,6 @@
-namespace WinFormsApp1
+using lombard.Viev;
+
+namespace lombard
 {
     internal static class Program
     {

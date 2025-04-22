@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp1.Models
+﻿namespace lombard.Models
 {
     [Serializable]
     public class PawnshopDatabase //Клас бази даних
