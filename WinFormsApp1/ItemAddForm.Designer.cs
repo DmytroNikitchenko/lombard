@@ -54,7 +54,7 @@
             AddItemButton.RightToLeft = RightToLeft.No;
             AddItemButton.Size = new Size(145, 49);
             AddItemButton.TabIndex = 0;
-            AddItemButton.Text = "Додати товар";
+            AddItemButton.Text = "Додати запис";
             AddItemButton.UseVisualStyleBackColor = true;
             AddItemButton.Click += AdditemButton_Click;
             // 

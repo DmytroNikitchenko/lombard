@@ -66,7 +66,7 @@
             buttonToAddForm.Name = "buttonToAddForm";
             buttonToAddForm.Size = new Size(135, 50);
             buttonToAddForm.TabIndex = 1;
-            buttonToAddForm.Text = "Додати товар";
+            buttonToAddForm.Text = "Додати запис";
             buttonToAddForm.UseVisualStyleBackColor = true;
             buttonToAddForm.Click += buttonToAddForm_Click;
             // 
