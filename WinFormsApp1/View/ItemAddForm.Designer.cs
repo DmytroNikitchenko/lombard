@@ -1,4 +1,4 @@
-﻿namespace lombard.Viev
+﻿namespace lombard.View
 {
     partial class ItemAddForm
     {

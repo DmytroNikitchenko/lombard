@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using lombard.Models;
 
-namespace lombard.Viev
+namespace lombard.View
 {
     public partial class ItemAddForm : Form //Форма додавання елементів
     {

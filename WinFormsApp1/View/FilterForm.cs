@@ -1,6 +1,6 @@
 ﻿using lombard.Models;
 
-namespace lombard.Viev
+namespace lombard.View
 {
     public partial class FilterForm : Form //форма для фільтрації
     {
