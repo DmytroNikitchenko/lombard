@@ -88,27 +88,27 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(94, 15);
+            label1.Size = new Size(97, 15);
             label1.TabIndex = 4;
-            label1.Text = "Назва предмету";
+            label1.Text = "Назва предмету:";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Location = new Point(12, 38);
             label2.Name = "label2";
-            label2.Size = new Size(28, 15);
+            label2.Size = new Size(31, 15);
             label2.TabIndex = 5;
-            label2.Text = "ФІО";
+            label2.Text = "ФІО:";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Location = new Point(12, 67);
             label3.Name = "label3";
-            label3.Size = new Size(137, 15);
+            label3.Size = new Size(140, 15);
             label3.TabIndex = 6;
-            label3.Text = "Оціночна вартість (грн)";
+            label3.Text = "Оціночна вартість (грн):";
             // 
             // textBoxLoanAmount
             // 
@@ -131,18 +131,18 @@
             label4.AutoSize = true;
             label4.Location = new Point(12, 96);
             label4.Name = "label4";
-            label4.Size = new Size(115, 15);
+            label4.Size = new Size(118, 15);
             label4.TabIndex = 9;
-            label4.Text = "Сума кредиту (грн.)";
+            label4.Text = "Сума кредиту (грн.):";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Location = new Point(12, 125);
             label5.Name = "label5";
-            label5.Size = new Size(129, 15);
+            label5.Size = new Size(132, 15);
             label5.TabIndex = 10;
-            label5.Text = "Строк зберігання (дн.)";
+            label5.Text = "Строк зберігання (дн.):";
             // 
             // textBoxPhone
             // 
@@ -158,9 +158,9 @@
             label6.AutoSize = true;
             label6.Location = new Point(12, 154);
             label6.Name = "label6";
-            label6.Size = new Size(101, 15);
+            label6.Size = new Size(104, 15);
             label6.TabIndex = 12;
-            label6.Text = "Номер телефону";
+            label6.Text = "Номер телефону:";
             // 
             // comboBoxCategories
             // 
