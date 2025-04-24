@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Text.Encodings.Web;
+using System.Text.Json;
 
 namespace lombard.Models
 {
@@ -8,7 +9,7 @@ namespace lombard.Models
 
         public static void SaveData(PawnshopDatabase database)
         {
-            var json = JsonSerializer.Serialize(database, new JsonSerializerOptions { WriteIndented = true });
+            var json = JsonSerializer.Serialize(database, new JsonSerializerOptions { WriteIndented = true, Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping });
             File.WriteAllText(FilePath, json);
         }
 

@@ -42,7 +42,8 @@ namespace lombard.View
                 string.IsNullOrWhiteSpace(textBoxEstimatedValue.Text) ||
                 string.IsNullOrWhiteSpace(textBoxLoanAmount.Text) ||
                 string.IsNullOrWhiteSpace(textBoxStoragePeriodDays.Text) ||
-                string.IsNullOrWhiteSpace(textBoxPhone.Text))
+                string.IsNullOrWhiteSpace(textBoxPhone.Text) ||
+                comboBoxCategories.SelectedIndex == -1)
                 {
                     MessageBox.Show("Будь ласка, заповніть усі поля!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
