@@ -34,7 +34,7 @@ namespace lombard.View
             }
 
             // Категорія
-            if (selectedCategory != "Усі")
+            if (selectedCategory != "Усі" && comboBoxCategory.SelectedIndex != -1)
             {
                 filtered = filtered.Where(item => item.Category == selectedCategory);
             }
