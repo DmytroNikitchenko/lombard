@@ -81,7 +81,7 @@
             textBoxEstimatedValue.Name = "textBoxEstimatedValue";
             textBoxEstimatedValue.Size = new Size(100, 23);
             textBoxEstimatedValue.TabIndex = 3;
-            textBoxEstimatedValue.KeyPress += textBoxEstimatedValue_KeyPress;
+            textBoxEstimatedValue.KeyPress += textBoxPhone_KeyPress;
             // 
             // label1
             // 
@@ -116,7 +116,7 @@
             textBoxLoanAmount.Name = "textBoxLoanAmount";
             textBoxLoanAmount.Size = new Size(100, 23);
             textBoxLoanAmount.TabIndex = 7;
-            textBoxLoanAmount.KeyPress += textBoxLoanAmount_KeyPress;
+            textBoxLoanAmount.KeyPress += textBoxPhone_KeyPress;
             // 
             // textBoxStoragePeriodDays
             // 
@@ -124,7 +124,7 @@
             textBoxStoragePeriodDays.Name = "textBoxStoragePeriodDays";
             textBoxStoragePeriodDays.Size = new Size(100, 23);
             textBoxStoragePeriodDays.TabIndex = 8;
-            textBoxStoragePeriodDays.KeyPress += textBoxStoragePeriodDays_KeyPress;
+            textBoxStoragePeriodDays.KeyPress += textBoxPhone_KeyPress;
             // 
             // label4
             // 

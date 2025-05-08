@@ -1,5 +1,6 @@
 ﻿using lombard.Models;
 
+
 namespace lombard.View
 {
     public partial class MainForm : Form //Головне вікно
