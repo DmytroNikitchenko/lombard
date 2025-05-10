@@ -38,6 +38,8 @@
             textBoxSearch = new TextBox();
             buttonSearchClear = new Button();
             buttonFilter = new Button();
+            buttonEdit = new Button();
+            buttonPrint = new Button();
             ((System.ComponentModel.ISupportInitialize)ArrayViev).BeginInit();
             SuspendLayout();
             // 
@@ -53,16 +55,17 @@
             ArrayViev.Name = "ArrayViev";
             ArrayViev.ReadOnly = true;
             ArrayViev.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            ArrayViev.Size = new Size(875, 583);
+            ArrayViev.Size = new Size(1165, 662);
             ArrayViev.TabIndex = 0;
             ArrayViev.ColumnHeaderMouseClick += ArrayViev_ColumnHeaderMouseClick;
+            ArrayViev.SelectionChanged += ArrayViev_SelectionChanged;
             ArrayViev.KeyDown += ArrayViev_KeyDown;
             // 
             // buttonToAddForm
             // 
             buttonToAddForm.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonToAddForm.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            buttonToAddForm.Location = new Point(880, 212);
+            buttonToAddForm.Location = new Point(1171, 199);
             buttonToAddForm.Name = "buttonToAddForm";
             buttonToAddForm.Size = new Size(135, 50);
             buttonToAddForm.TabIndex = 1;
@@ -74,7 +77,7 @@
             // 
             buttonCheckInfo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonCheckInfo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            buttonCheckInfo.Location = new Point(878, 268);
+            buttonCheckInfo.Location = new Point(1171, 316);
             buttonCheckInfo.Name = "buttonCheckInfo";
             buttonCheckInfo.Size = new Size(135, 50);
             buttonCheckInfo.TabIndex = 2;
@@ -86,7 +89,7 @@
             // 
             buttonDeleteItem.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             buttonDeleteItem.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            buttonDeleteItem.Location = new Point(881, 521);
+            buttonDeleteItem.Location = new Point(1171, 600);
             buttonDeleteItem.Name = "buttonDeleteItem";
             buttonDeleteItem.Size = new Size(135, 50);
             buttonDeleteItem.TabIndex = 4;
@@ -96,9 +99,9 @@
             // 
             // buttonRefound
             // 
-            buttonRefound.Anchor = AnchorStyles.Right;
+            buttonRefound.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             buttonRefound.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            buttonRefound.Location = new Point(881, 369);
+            buttonRefound.Location = new Point(1171, 461);
             buttonRefound.Name = "buttonRefound";
             buttonRefound.Size = new Size(135, 50);
             buttonRefound.TabIndex = 5;
@@ -108,9 +111,9 @@
             // 
             // buttonSell
             // 
-            buttonSell.Anchor = AnchorStyles.Right;
+            buttonSell.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             buttonSell.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            buttonSell.Location = new Point(881, 425);
+            buttonSell.Location = new Point(1171, 517);
             buttonSell.Name = "buttonSell";
             buttonSell.Size = new Size(135, 50);
             buttonSell.TabIndex = 6;
@@ -122,7 +125,7 @@
             // 
             buttonSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonSearch.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            buttonSearch.Location = new Point(881, 41);
+            buttonSearch.Location = new Point(1171, 41);
             buttonSearch.Name = "buttonSearch";
             buttonSearch.Size = new Size(135, 50);
             buttonSearch.TabIndex = 7;
@@ -133,7 +136,7 @@
             // textBoxSearch
             // 
             textBoxSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBoxSearch.Location = new Point(881, 12);
+            textBoxSearch.Location = new Point(1173, 12);
             textBoxSearch.MaxLength = 255;
             textBoxSearch.Name = "textBoxSearch";
             textBoxSearch.Size = new Size(133, 23);
@@ -144,7 +147,7 @@
             // 
             buttonSearchClear.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonSearchClear.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            buttonSearchClear.Location = new Point(881, 97);
+            buttonSearchClear.Location = new Point(1171, 97);
             buttonSearchClear.Name = "buttonSearchClear";
             buttonSearchClear.Size = new Size(135, 30);
             buttonSearchClear.TabIndex = 9;
@@ -156,7 +159,7 @@
             // 
             buttonFilter.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonFilter.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            buttonFilter.Location = new Point(880, 133);
+            buttonFilter.Location = new Point(1171, 133);
             buttonFilter.Name = "buttonFilter";
             buttonFilter.Size = new Size(135, 50);
             buttonFilter.TabIndex = 10;
@@ -164,12 +167,37 @@
             buttonFilter.UseVisualStyleBackColor = true;
             buttonFilter.Click += buttonFilter_Click;
             // 
+            // buttonEdit
+            // 
+            buttonEdit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonEdit.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            buttonEdit.Location = new Point(1171, 251);
+            buttonEdit.Name = "buttonEdit";
+            buttonEdit.Size = new Size(135, 50);
+            buttonEdit.TabIndex = 11;
+            buttonEdit.Text = "Редагування";
+            buttonEdit.UseVisualStyleBackColor = true;
+            buttonEdit.Click += buttonEdit_Click;
+            // 
+            // buttonPrint
+            // 
+            buttonPrint.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonPrint.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            buttonPrint.Location = new Point(1171, 389);
+            buttonPrint.Name = "buttonPrint";
+            buttonPrint.Size = new Size(135, 50);
+            buttonPrint.TabIndex = 12;
+            buttonPrint.Text = "Друк чеку //TODO";
+            buttonPrint.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
-            ClientSize = new Size(1026, 583);
+            ClientSize = new Size(1316, 662);
+            Controls.Add(buttonPrint);
+            Controls.Add(buttonEdit);
             Controls.Add(buttonFilter);
             Controls.Add(buttonSearchClear);
             Controls.Add(textBoxSearch);
@@ -182,7 +210,7 @@
             Controls.Add(ArrayViev);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
             KeyPreview = true;
-            MinimumSize = new Size(950, 500);
+            MinimumSize = new Size(1158, 701);
             Name = "MainForm";
             Text = "Ломбард";
             ((System.ComponentModel.ISupportInitialize)ArrayViev).EndInit();
@@ -202,5 +230,7 @@
         private TextBox textBoxSearch;
         private Button buttonSearchClear;
         private Button buttonFilter;
+        private Button buttonEdit;
+        private Button buttonPrint;
     }
 }

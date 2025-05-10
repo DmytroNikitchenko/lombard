@@ -13,5 +13,6 @@
         public ItemStatus Status { get; set; }
         public int ClientId { get; set; }
         public DateTime SaleReturnDate { get; set; }
+
     }
 }

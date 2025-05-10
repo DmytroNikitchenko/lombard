@@ -4,8 +4,8 @@ namespace lombard.View
 {
     public partial class FilterForm : Form //форма для фільтрації
     {
-        PawnshopDatabase database;
-        MainForm mainForm;
+        private PawnshopDatabase database;
+        private MainForm mainForm;
         public FilterForm(MainForm mainForm, PawnshopDatabase database)
         {
             InitializeComponent();

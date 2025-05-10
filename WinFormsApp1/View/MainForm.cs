@@ -11,7 +11,6 @@ namespace lombard.View
             InitializeComponent();
             database = DatabaseManager.LoadData();
             ArrayViev.DataSource = database.Items;
-            ArrayViev.SelectionChanged += new EventHandler(ArrayViev_SelectionChanged);
 
             FormatColumnsNames(ArrayViev);
         }
@@ -29,7 +28,6 @@ namespace lombard.View
             dataGridView.Columns["SaleReturnDate"].HeaderText = "Дата продажу/повернення";
             dataGridView.Columns["Category"].HeaderText = "Категорія";
         }
-
         public void RefreshDataGrid()
         {
             database = DatabaseManager.LoadData();
@@ -78,19 +76,17 @@ namespace lombard.View
                 buttonSell.Enabled = false;
             }
         }
-
         private void buttonToAddForm_Click(object sender, EventArgs e)
         {
-            ItemAddForm itemAddForm = new ItemAddForm(this);
+            ItemAddForm itemAddForm = new ItemAddForm(this, database);
             itemAddForm.Show();
         }
-
         private void buttonCheckInfo_Click(object sender, EventArgs e)
         {
             if (ArrayViev.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = ArrayViev.SelectedRows[0];
-                FullInfo fullInfo = new FullInfo(selectedRow, database);
+                FullInfo fullInfo = new FullInfo(database, selectedRow);
                 fullInfo.Show();
             }
             else
@@ -98,7 +94,6 @@ namespace lombard.View
                 MessageBox.Show("Виберіть рядок для перегляду деталей!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
         private void buttonDeleteItem_Click(object sender, EventArgs e)
         {
             if (ArrayViev.SelectedRows.Count > 0)
@@ -108,7 +103,7 @@ namespace lombard.View
                 {
                     DataGridViewRow selectedRow = ArrayViev.SelectedRows[0];
                     int itemId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
-                    var item = database.Items.FirstOrDefault(i => i.Id == itemId);
+                    Item item = database.GetItemById(itemId);
 
                     if (item != null)
                     {
@@ -127,7 +122,6 @@ namespace lombard.View
                 MessageBox.Show("Виберіть рядок для видалення", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
         private void buttonRefound_Click(object sender, EventArgs e)
         {
             if (ArrayViev.SelectedRows.Count > 0)
@@ -137,7 +131,7 @@ namespace lombard.View
                 {
                     DataGridViewRow selectedRow = ArrayViev.SelectedRows[0];
                     int itemId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
-                    var item = database.Items.FirstOrDefault(i => i.Id == itemId);
+                    Item item = database.GetItemById(itemId);
 
                     if (item != null)
                     {
@@ -166,7 +160,7 @@ namespace lombard.View
                 {
                     DataGridViewRow selectedRow = ArrayViev.SelectedRows[0];
                     int itemId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
-                    var item = database.Items.FirstOrDefault(i => i.Id == itemId);
+                    Item item = database.GetItemById(itemId);
 
                     if (item != null)
                     {
@@ -186,24 +180,20 @@ namespace lombard.View
                 MessageBox.Show("Виберіть рядок", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             ArrayViev.DataSource = database.SearchItemsByName(textBoxSearch.Text.ToString());
             FormatColumnsNames(ArrayViev);
         }
-
         private void buttonSearchClear_Click(object sender, EventArgs e)
         {
             RefreshDataGrid();
         }
-
         private void buttonFilter_Click(object sender, EventArgs e)
         {
             FilterForm filterForm = new FilterForm(this, database);
             filterForm.Show();
         }
-
         private void ArrayViev_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -298,19 +288,25 @@ namespace lombard.View
                 }
             }
 
+
             ArrayViev.DataSource = null;
             ArrayViev.DataSource = items;
             FormatColumnsNames(ArrayViev);
 
             ascending = !ascending;
         }
-
         private void textBoxSearch_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 buttonSearch.PerformClick();
             }
+        }
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow selectedRow = ArrayViev.SelectedRows[0];
+            EditForm editForm = new EditForm(this, database, selectedRow);
+            editForm.Show();
         }
     }
 }

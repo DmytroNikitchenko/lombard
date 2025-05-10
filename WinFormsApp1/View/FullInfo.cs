@@ -4,12 +4,11 @@ namespace lombard.View
 {
     public partial class FullInfo : Form //Форма з повною інформацією
     {
-        public FullInfo(DataGridViewRow row, PawnshopDatabase database)
+        public FullInfo(PawnshopDatabase database, DataGridViewRow row)
         {
             InitializeComponent();
             int ClientId = Convert.ToInt32(row.Cells["ClientId"].Value);
-
-            Client foundClient = database.Clients.FirstOrDefault(c => c.Id == ClientId);
+            Client foundClient = database.GetClientById(ClientId);
 
 
             textBox1.Text = row.Cells["Id"].Value.ToString();

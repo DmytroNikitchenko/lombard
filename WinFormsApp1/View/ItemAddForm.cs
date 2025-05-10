@@ -1,5 +1,5 @@
-﻿using System.Data;
-using lombard.Models;
+﻿using lombard.Models;
+using System.Data;
 
 namespace lombard.View
 {
@@ -7,11 +7,13 @@ namespace lombard.View
     {
         private MainForm mainForm;
         private PawnshopDatabase database;
-        public ItemAddForm(MainForm form)
+        private Client client;
+        public ItemAddForm(MainForm mainForm, PawnshopDatabase database)
         {
             InitializeComponent();
-            database = DatabaseManager.LoadData();
-            mainForm = form;
+            this.database = database;
+            client = database.GetClientByFullName(textBoxFullName.Text);
+            this.mainForm = mainForm;
         }
         private static int GetNextItemId(List<Item> items)
         {
@@ -53,8 +55,7 @@ namespace lombard.View
                     MessageBox.Show("Оціночна вартість має бути більше або дорівнювати сумі кредиту", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
-                var client = database.Clients.FirstOrDefault(c => c.FullName == textBoxFullName.Text);
+                
                 if (client == null)
                 {
                     client = new Client
@@ -63,10 +64,10 @@ namespace lombard.View
                         FullName = textBoxFullName.Text,
                         PhoneNumber = textBoxPhone.Text
                     };
-                    database.Clients.Add(client);
+                    database.AddClient(client);
                 }
 
-                var newItem = new Item
+                Item newItem = new Item
                 {
                     Id = GetNextItemId(database.Items),
                     Name = textBoxItemName.Text,
@@ -79,11 +80,8 @@ namespace lombard.View
                     Category = comboBoxCategories.SelectedItem.ToString()
                 };
 
-
-                database.Items.Add(newItem);
-
+                database.AddItem(newItem);
                 DatabaseManager.SaveData(database);
-
 
                 textBoxItemName.Clear();
                 textBoxFullName.Clear();
@@ -103,7 +101,7 @@ namespace lombard.View
             {
                 e.Handled = true;
             }
-        }       
+        }
         private void textBoxFullName_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.Space)
