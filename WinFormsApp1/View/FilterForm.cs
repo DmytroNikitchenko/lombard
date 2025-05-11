@@ -15,15 +15,16 @@ namespace lombard.View
 
         private void buttonFilter_Click(object sender, EventArgs e)
         {
-            string nameFilter = textBoxSearchName.Text.Trim();
-            string selectedCategory = comboBoxCategory.SelectedItem?.ToString();
-            string selectedStatus = comboBoxStatus.SelectedItem?.ToString();
+            string nameFilter = textBoxName.Text.Trim();
+            string? selectedCategory = comboBoxCategory.SelectedItem?.ToString();
+            string? selectedStatus = comboBoxStorageStatus.SelectedItem?.ToString();
+            string? selectedStatusForSaleOrReturn = comboBoxStatusForSaleOrReturn.SelectedItem?.ToString();
 
-            decimal minValue = numericUpDownMinValue.Value;
-            decimal maxValue = numericUpDownMaxValue.Value;
+            decimal minValue = numericMinEstimatedValue.Value;
+            decimal maxValue = numericMaxEstimatedValue.Value;
 
-            DateTime dateFrom = dateTimePickerFrom.Value.Date;
-            DateTime dateTo = dateTimePickerTo.Value.Date;
+            DateTime dateFrom = datePickerFromDate.Value.Date;
+            DateTime dateTo = datePickerToDate.Value.Date;
 
             var filtered = database.Items.AsEnumerable();
 
@@ -42,6 +43,11 @@ namespace lombard.View
             if (selectedStatus != "Усі" && Enum.TryParse<ItemStatus>(selectedStatus, out var status))
             {
                 filtered = filtered.Where(item => item.Status == status);
+            }
+            // статус для продажу
+            if (selectedStatusForSaleOrReturn!="Усі" && comboBoxCategory.SelectedIndex != -1)
+            {
+                filtered = filtered.Where(item => item.StatusToSaleOrReturn == selectedStatusForSaleOrReturn);
             }
             // Оціночна вартість
             filtered = filtered.Where(item => item.EstimatedValue >= minValue && item.EstimatedValue <= maxValue);

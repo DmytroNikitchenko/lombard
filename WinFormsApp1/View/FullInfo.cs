@@ -19,6 +19,7 @@ namespace lombard.View
             textDepositDate.Text = foundItem.DepositDate.ToShortDateString();
             textStorageDays.Text = foundItem.StoragePeriodDays.ToString();
             textItemStatus.Text = foundItem.Status.ToString();
+            textBoxStatusToSaleOrReturn.Text = foundItem.StatusToSaleOrReturn.ToString();
             textItemCategory.Text = foundItem.Category;
 
             if (foundItem.Status == ItemStatus.Зберігається)

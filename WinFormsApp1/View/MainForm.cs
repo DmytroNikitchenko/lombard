@@ -24,11 +24,12 @@ namespace lombard.View
             dataGridView.Columns["LoanAmount"].HeaderText = "Сума кредиту (грн.)";
             dataGridView.Columns["DepositDate"].HeaderText = "Дата внеску";
             dataGridView.Columns["StoragePeriodDays"].HeaderText = "Строк зберігання (дн.)";
-            dataGridView.Columns["Status"].HeaderText = "Статус";
+            dataGridView.Columns["Status"].HeaderText = "Статус на складі";
             dataGridView.Columns["ClientId"].HeaderText = "ID клієнта";
             dataGridView.Columns["SaleReturnDate"].HeaderText = "Дата продажу/повернення";
             dataGridView.Columns["Category"].HeaderText = "Категорія";
             dataGridView.Columns["RedemptionPrice"].HeaderText = "Викупна ціна";
+            dataGridView.Columns["StatusToSaleOrReturn"].HeaderText = "Статус для продажу";
         }
         public void RefreshDataGrid()
         {
@@ -254,6 +255,9 @@ namespace lombard.View
                     case "RedemptionPrice":
                         items.Sort((x, y) => x.RedemptionPrice.CompareTo(y.RedemptionPrice));
                         break;
+                    case "StatusToSaleOrReturn":
+                        items.Sort((x, y) => string.Compare(x.StatusToSaleOrReturn, y.StatusToSaleOrReturn));
+                        break;
                 }
             }
             else
@@ -292,6 +296,9 @@ namespace lombard.View
                         break;
                     case "RedemptionPrice":
                         items.Sort((x, y) => y.RedemptionPrice.CompareTo(x.RedemptionPrice));
+                        break;
+                    case "StatusToSaleOrReturn":
+                        items.Sort((x, y) => string.Compare(y.StatusToSaleOrReturn, x.StatusToSaleOrReturn));
                         break;
                 }
             }

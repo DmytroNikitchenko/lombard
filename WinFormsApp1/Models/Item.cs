@@ -30,6 +30,25 @@
         }
         public DateTime DepositDate { get; set; }
         public int StoragePeriodDays { get; set; }
+        public string StatusToSaleOrReturn
+        {
+            get
+            {
+                if (Status == ItemStatus.Продано)
+                {
+                    return "Продано";
+                }
+                else if(Status == ItemStatus.Повернено)
+                {
+                    return "Повернено";
+                }
+                else
+                {
+                    DateTime endDate = DepositDate.AddDays(StoragePeriodDays);
+                    return DateTime.Now <= endDate ? "Чекає на повернення" : "Продається";
+                }                
+            }
+        }
         public ItemStatus Status { get; set; }
         public int ClientId { get; set; }
         public DateTime SaleReturnDate { get; set; }        

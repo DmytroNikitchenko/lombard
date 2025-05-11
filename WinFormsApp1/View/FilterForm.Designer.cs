@@ -28,33 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBoxSearchName = new TextBox();
+            textBoxName = new TextBox();
             comboBoxCategory = new ComboBox();
-            comboBoxStatus = new ComboBox();
-            numericUpDownMinValue = new NumericUpDown();
-            numericUpDownMaxValue = new NumericUpDown();
-            dateTimePickerFrom = new DateTimePicker();
-            dateTimePickerTo = new DateTimePicker();
-            buttonFilter = new Button();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownMinValue).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownMaxValue).BeginInit();
+            comboBoxStorageStatus = new ComboBox();
+            numericMinEstimatedValue = new NumericUpDown();
+            numericMaxEstimatedValue = new NumericUpDown();
+            datePickerFromDate = new DateTimePicker();
+            datePickerToDate = new DateTimePicker();
+            buttonApplyFilter = new Button();
+            labelName = new Label();
+            labelCategory = new Label();
+            labelStorageStatus = new Label();
+            labelMinEstimatedValue = new Label();
+            labelMaxEstimatedValue = new Label();
+            labelFromDate = new Label();
+            labelToDate = new Label();
+            labelStatusForSaleOrReturn = new Label();
+            comboBoxStatusForSaleOrReturn = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)numericMinEstimatedValue).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericMaxEstimatedValue).BeginInit();
             SuspendLayout();
             // 
-            // textBoxSearchName
+            // textBoxName
             // 
-            textBoxSearchName.Font = new Font("Segoe UI", 12F);
-            textBoxSearchName.Location = new Point(201, 9);
-            textBoxSearchName.MaxLength = 255;
-            textBoxSearchName.Name = "textBoxSearchName";
-            textBoxSearchName.Size = new Size(200, 29);
-            textBoxSearchName.TabIndex = 0;
+            textBoxName.Font = new Font("Segoe UI", 12F);
+            textBoxName.Location = new Point(201, 6);
+            textBoxName.MaxLength = 255;
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new Size(200, 29);
+            textBoxName.TabIndex = 0;
             // 
             // comboBoxCategory
             // 
@@ -62,184 +64,209 @@
             comboBoxCategory.Font = new Font("Segoe UI", 12F);
             comboBoxCategory.FormattingEnabled = true;
             comboBoxCategory.Items.AddRange(new object[] { "Усі", "Золото", "Срібло", "Коштовності", "Годинники", "Електроніка", "Автомобілі", "Побутова техніка", "Музичні інструменти", "Колекційні предмети", "Зброя", "Предмети мистецтва", "Меблі", "Гроші, монети, банкноти", "Одяг", "Інше" });
-            comboBoxCategory.Location = new Point(201, 61);
+            comboBoxCategory.Location = new Point(201, 55);
             comboBoxCategory.Name = "comboBoxCategory";
             comboBoxCategory.Size = new Size(200, 29);
             comboBoxCategory.TabIndex = 1;
             // 
-            // comboBoxStatus
+            // comboBoxStorageStatus
             // 
-            comboBoxStatus.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxStatus.Font = new Font("Segoe UI", 12F);
-            comboBoxStatus.FormattingEnabled = true;
-            comboBoxStatus.Items.AddRange(new object[] { "Усі", "Зберігається", "Повернено", "Продано" });
-            comboBoxStatus.Location = new Point(201, 90);
-            comboBoxStatus.Name = "comboBoxStatus";
-            comboBoxStatus.Size = new Size(200, 29);
-            comboBoxStatus.TabIndex = 2;
+            comboBoxStorageStatus.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxStorageStatus.Font = new Font("Segoe UI", 12F);
+            comboBoxStorageStatus.FormattingEnabled = true;
+            comboBoxStorageStatus.Items.AddRange(new object[] { "Усі", "Зберігається", "Повернено", "Продано" });
+            comboBoxStorageStatus.Location = new Point(201, 90);
+            comboBoxStorageStatus.Name = "comboBoxStorageStatus";
+            comboBoxStorageStatus.Size = new Size(200, 29);
+            comboBoxStorageStatus.TabIndex = 2;
             // 
-            // numericUpDownMinValue
+            // numericMinEstimatedValue
             // 
-            numericUpDownMinValue.Font = new Font("Segoe UI", 12F);
-            numericUpDownMinValue.Location = new Point(201, 152);
-            numericUpDownMinValue.Maximum = new decimal(new int[] { 268435455, 1042612833, 542101086, 0 });
-            numericUpDownMinValue.Name = "numericUpDownMinValue";
-            numericUpDownMinValue.Size = new Size(200, 29);
-            numericUpDownMinValue.TabIndex = 3;
+            numericMinEstimatedValue.Font = new Font("Segoe UI", 12F);
+            numericMinEstimatedValue.Location = new Point(201, 193);
+            numericMinEstimatedValue.Maximum = new decimal(new int[] { 268435455, 1042612833, 542101086, 0 });
+            numericMinEstimatedValue.Name = "numericMinEstimatedValue";
+            numericMinEstimatedValue.Size = new Size(200, 29);
+            numericMinEstimatedValue.TabIndex = 3;
             // 
-            // numericUpDownMaxValue
+            // numericMaxEstimatedValue
             // 
-            numericUpDownMaxValue.Font = new Font("Segoe UI", 12F);
-            numericUpDownMaxValue.Location = new Point(201, 181);
-            numericUpDownMaxValue.Maximum = new decimal(new int[] { 268435455, 1042612833, 542101086, 0 });
-            numericUpDownMaxValue.Name = "numericUpDownMaxValue";
-            numericUpDownMaxValue.Size = new Size(200, 29);
-            numericUpDownMaxValue.TabIndex = 4;
-            numericUpDownMaxValue.Value = new decimal(new int[] { 1000, 0, 0, 0 });
+            numericMaxEstimatedValue.Font = new Font("Segoe UI", 12F);
+            numericMaxEstimatedValue.Location = new Point(201, 222);
+            numericMaxEstimatedValue.Maximum = new decimal(new int[] { 268435455, 1042612833, 542101086, 0 });
+            numericMaxEstimatedValue.Name = "numericMaxEstimatedValue";
+            numericMaxEstimatedValue.Size = new Size(200, 29);
+            numericMaxEstimatedValue.TabIndex = 4;
+            numericMaxEstimatedValue.Value = new decimal(new int[] { 1000, 0, 0, 0 });
             // 
-            // dateTimePickerFrom
+            // datePickerFromDate
             // 
-            dateTimePickerFrom.Font = new Font("Segoe UI", 12F);
-            dateTimePickerFrom.Location = new Point(201, 226);
-            dateTimePickerFrom.Name = "dateTimePickerFrom";
-            dateTimePickerFrom.Size = new Size(200, 29);
-            dateTimePickerFrom.TabIndex = 5;
+            datePickerFromDate.Font = new Font("Segoe UI", 12F);
+            datePickerFromDate.Location = new Point(201, 267);
+            datePickerFromDate.Name = "datePickerFromDate";
+            datePickerFromDate.Size = new Size(200, 29);
+            datePickerFromDate.TabIndex = 5;
             // 
-            // dateTimePickerTo
+            // datePickerToDate
             // 
-            dateTimePickerTo.Font = new Font("Segoe UI", 12F);
-            dateTimePickerTo.Location = new Point(201, 255);
-            dateTimePickerTo.Name = "dateTimePickerTo";
-            dateTimePickerTo.Size = new Size(200, 29);
-            dateTimePickerTo.TabIndex = 6;
+            datePickerToDate.Font = new Font("Segoe UI", 12F);
+            datePickerToDate.Location = new Point(201, 296);
+            datePickerToDate.Name = "datePickerToDate";
+            datePickerToDate.Size = new Size(200, 29);
+            datePickerToDate.TabIndex = 6;
             // 
-            // buttonFilter
+            // buttonApplyFilter
             // 
-            buttonFilter.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonFilter.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            buttonFilter.Location = new Point(653, 388);
-            buttonFilter.Name = "buttonFilter";
-            buttonFilter.Size = new Size(135, 50);
-            buttonFilter.TabIndex = 7;
-            buttonFilter.Text = "Фільтрувати";
-            buttonFilter.UseVisualStyleBackColor = true;
-            buttonFilter.Click += buttonFilter_Click;
+            buttonApplyFilter.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonApplyFilter.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            buttonApplyFilter.Location = new Point(653, 388);
+            buttonApplyFilter.Name = "buttonApplyFilter";
+            buttonApplyFilter.Size = new Size(135, 50);
+            buttonApplyFilter.TabIndex = 7;
+            buttonApplyFilter.Text = "Фільтрувати";
+            buttonApplyFilter.UseVisualStyleBackColor = true;
+            buttonApplyFilter.Click += buttonFilter_Click;
             // 
-            // label1
+            // labelName
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label1.Location = new Point(12, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(55, 21);
-            label1.TabIndex = 8;
-            label1.Text = "Назва:";
+            labelName.AutoSize = true;
+            labelName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            labelName.Location = new Point(12, 9);
+            labelName.Name = "labelName";
+            labelName.Size = new Size(55, 21);
+            labelName.TabIndex = 8;
+            labelName.Text = "Назва:";
             // 
-            // label2
+            // labelCategory
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label2.Location = new Point(12, 64);
-            label2.Name = "label2";
-            label2.Size = new Size(81, 21);
-            label2.TabIndex = 9;
-            label2.Text = "Категорія:";
+            labelCategory.AutoSize = true;
+            labelCategory.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            labelCategory.Location = new Point(12, 58);
+            labelCategory.Name = "labelCategory";
+            labelCategory.Size = new Size(81, 21);
+            labelCategory.TabIndex = 9;
+            labelCategory.Text = "Категорія:";
             // 
-            // label3
+            // labelStorageStatus
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label3.Location = new Point(12, 93);
-            label3.Name = "label3";
-            label3.Size = new Size(60, 21);
-            label3.TabIndex = 10;
-            label3.Text = "Статус:";
+            labelStorageStatus.AutoSize = true;
+            labelStorageStatus.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            labelStorageStatus.Location = new Point(12, 93);
+            labelStorageStatus.Name = "labelStorageStatus";
+            labelStorageStatus.Size = new Size(129, 21);
+            labelStorageStatus.TabIndex = 10;
+            labelStorageStatus.Text = "Статус на складі:";
             // 
-            // label4
+            // labelMinEstimatedValue
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label4.Location = new Point(12, 154);
-            label4.Name = "label4";
-            label4.Size = new Size(172, 21);
-            label4.TabIndex = 11;
-            label4.Text = "Мін. оц. вартість (грн.):";
+            labelMinEstimatedValue.AutoSize = true;
+            labelMinEstimatedValue.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            labelMinEstimatedValue.Location = new Point(12, 195);
+            labelMinEstimatedValue.Name = "labelMinEstimatedValue";
+            labelMinEstimatedValue.Size = new Size(172, 21);
+            labelMinEstimatedValue.TabIndex = 11;
+            labelMinEstimatedValue.Text = "Мін. оц. вартість (грн.):";
             // 
-            // label5
+            // labelMaxEstimatedValue
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label5.Location = new Point(12, 181);
-            label5.Name = "label5";
-            label5.Size = new Size(182, 21);
-            label5.TabIndex = 12;
-            label5.Text = "Макс. оц. вартість (грн.):";
+            labelMaxEstimatedValue.AutoSize = true;
+            labelMaxEstimatedValue.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            labelMaxEstimatedValue.Location = new Point(12, 222);
+            labelMaxEstimatedValue.Name = "labelMaxEstimatedValue";
+            labelMaxEstimatedValue.Size = new Size(182, 21);
+            labelMaxEstimatedValue.TabIndex = 12;
+            labelMaxEstimatedValue.Text = "Макс. оц. вартість (грн.):";
             // 
-            // label6
+            // labelFromDate
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label6.Location = new Point(12, 232);
-            label6.Name = "label6";
-            label6.Size = new Size(110, 21);
-            label6.TabIndex = 13;
-            label6.Text = "Починаючи з:";
+            labelFromDate.AutoSize = true;
+            labelFromDate.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            labelFromDate.Location = new Point(12, 273);
+            labelFromDate.Name = "labelFromDate";
+            labelFromDate.Size = new Size(110, 21);
+            labelFromDate.TabIndex = 13;
+            labelFromDate.Text = "Починаючи з:";
             // 
-            // label7
+            // labelToDate
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label7.Location = new Point(12, 261);
-            label7.Name = "label7";
-            label7.Size = new Size(120, 21);
-            label7.TabIndex = 14;
-            label7.Text = "Закінчуючи на:";
+            labelToDate.AutoSize = true;
+            labelToDate.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            labelToDate.Location = new Point(12, 302);
+            labelToDate.Name = "labelToDate";
+            labelToDate.Size = new Size(120, 21);
+            labelToDate.TabIndex = 14;
+            labelToDate.Text = "Закінчуючи на:";
+            // 
+            // labelStatusForSaleOrReturn
+            // 
+            labelStatusForSaleOrReturn.AutoSize = true;
+            labelStatusForSaleOrReturn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            labelStatusForSaleOrReturn.Location = new Point(12, 128);
+            labelStatusForSaleOrReturn.Name = "labelStatusForSaleOrReturn";
+            labelStatusForSaleOrReturn.Size = new Size(157, 21);
+            labelStatusForSaleOrReturn.TabIndex = 16;
+            labelStatusForSaleOrReturn.Text = "Статус для продажу:";
+            // 
+            // comboBoxStatusForSaleOrReturn
+            // 
+            comboBoxStatusForSaleOrReturn.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxStatusForSaleOrReturn.Font = new Font("Segoe UI", 12F);
+            comboBoxStatusForSaleOrReturn.FormattingEnabled = true;
+            comboBoxStatusForSaleOrReturn.Items.AddRange(new object[] { "Усі", "Продається", "Очікує на повернення", "Продано", "Повернено" });
+            comboBoxStatusForSaleOrReturn.Location = new Point(201, 125);
+            comboBoxStatusForSaleOrReturn.Name = "comboBoxStatusForSaleOrReturn";
+            comboBoxStatusForSaleOrReturn.Size = new Size(200, 29);
+            comboBoxStatusForSaleOrReturn.TabIndex = 15;
             // 
             // FilterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(buttonFilter);
-            Controls.Add(dateTimePickerTo);
-            Controls.Add(dateTimePickerFrom);
-            Controls.Add(numericUpDownMaxValue);
-            Controls.Add(numericUpDownMinValue);
-            Controls.Add(comboBoxStatus);
+            Controls.Add(labelStatusForSaleOrReturn);
+            Controls.Add(comboBoxStatusForSaleOrReturn);
+            Controls.Add(labelToDate);
+            Controls.Add(labelFromDate);
+            Controls.Add(labelMaxEstimatedValue);
+            Controls.Add(labelMinEstimatedValue);
+            Controls.Add(labelStorageStatus);
+            Controls.Add(labelCategory);
+            Controls.Add(labelName);
+            Controls.Add(buttonApplyFilter);
+            Controls.Add(datePickerToDate);
+            Controls.Add(datePickerFromDate);
+            Controls.Add(numericMaxEstimatedValue);
+            Controls.Add(numericMinEstimatedValue);
+            Controls.Add(comboBoxStorageStatus);
             Controls.Add(comboBoxCategory);
-            Controls.Add(textBoxSearchName);
-            MinimumSize = new Size(581, 341);
+            Controls.Add(textBoxName);
+            MinimumSize = new Size(581, 369);
             Name = "FilterForm";
             Text = "Фільтрація";
-            ((System.ComponentModel.ISupportInitialize)numericUpDownMinValue).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownMaxValue).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericMinEstimatedValue).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericMaxEstimatedValue).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBoxSearchName;
+        private TextBox textBoxName;
         private ComboBox comboBoxCategory;
-        private ComboBox comboBoxStatus;
-        private NumericUpDown numericUpDownMinValue;
-        private NumericUpDown numericUpDownMaxValue;
-        private DateTimePicker dateTimePickerFrom;
-        private DateTimePicker dateTimePickerTo;
-        private Button buttonFilter;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
+        private ComboBox comboBoxStorageStatus;
+        private NumericUpDown numericMinEstimatedValue;
+        private NumericUpDown numericMaxEstimatedValue;
+        private DateTimePicker datePickerFromDate;
+        private DateTimePicker datePickerToDate;
+        private Button buttonApplyFilter;
+        private Label labelName;
+        private Label labelCategory;
+        private Label labelStorageStatus;
+        private Label labelMinEstimatedValue;
+        private Label labelMaxEstimatedValue;
+        private Label labelFromDate;
+        private Label labelToDate;
+        private Label labelStatusForSaleOrReturn;
+        private ComboBox comboBoxStatusForSaleOrReturn;
     }
 }
