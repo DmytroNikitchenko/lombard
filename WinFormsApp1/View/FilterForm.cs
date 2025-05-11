@@ -40,12 +40,12 @@ namespace lombard.View
                 filtered = filtered.Where(item => item.Category == selectedCategory);
             }
             // Статус
-            if (selectedStatus != "Усі" && Enum.TryParse<ItemStatus>(selectedStatus, out var status))
+            if (selectedStatus != "Усі" && Enum.TryParse<ItemStatus>(selectedStatus, out var status) && comboBoxStorageStatus.SelectedIndex !=-1)
             {
                 filtered = filtered.Where(item => item.Status == status);
             }
             // статус для продажу
-            if (selectedStatusForSaleOrReturn != "Усі" && comboBoxCategory.SelectedIndex != -1)
+            if (selectedStatusForSaleOrReturn != "Усі" && comboBoxStatusForSaleOrReturn.SelectedIndex != -1)
             {
                 filtered = filtered.Where(item => item.StatusToSaleOrReturn == selectedStatusForSaleOrReturn);
             }
