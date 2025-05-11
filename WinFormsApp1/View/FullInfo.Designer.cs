@@ -28,325 +28,325 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            label14 = new Label();
-            label15 = new Label();
-            label16 = new Label();
-            label17 = new Label();
-            label18 = new Label();
-            label19 = new Label();
-            label20 = new Label();
-            label21 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
-            textBox9 = new TextBox();
-            textBox10 = new TextBox();
-            textBox11 = new TextBox();
-            textBox12 = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            textBox13 = new TextBox();
+            labelClientPhone = new Label();
+            labelClientName = new Label();
+            labelClientId = new Label();
+            labelItemStatus = new Label();
+            labelStorageDays = new Label();
+            labelDepositDate = new Label();
+            labelLoanAmount = new Label();
+            labelEstimatedValue = new Label();
+            labelItemName = new Label();
+            labelItemId = new Label();
+            labelSaleReturnDate = new Label();
+            textItemId = new TextBox();
+            textItemName = new TextBox();
+            textEstimatedValue = new TextBox();
+            textLoanAmount = new TextBox();
+            textDepositDate = new TextBox();
+            textStorageDays = new TextBox();
+            textItemStatus = new TextBox();
+            textSaleReturnDate = new TextBox();
+            textClientId = new TextBox();
+            textClientName = new TextBox();
+            textClientPhone = new TextBox();
+            textItemCategory = new TextBox();
+            labelItemCategory = new Label();
+            labelSaleReturnPrice = new Label();
+            textSaleReturnPrice = new TextBox();
             SuspendLayout();
             // 
             // label11
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 12F);
-            label11.Location = new Point(12, 367);
-            label11.Name = "label11";
-            label11.Size = new Size(188, 21);
-            label11.TabIndex = 19;
-            label11.Text = "Номер телефону клієнта:";
+            labelClientPhone.AutoSize = true;
+            labelClientPhone.Font = new Font("Segoe UI", 12F);
+            labelClientPhone.Location = new Point(12, 367);
+            labelClientPhone.Name = "label11";
+            labelClientPhone.Size = new Size(188, 21);
+            labelClientPhone.TabIndex = 19;
+            labelClientPhone.Text = "Номер телефону клієнта:";
             // 
             // label12
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 12F);
-            label12.Location = new Point(12, 346);
-            label12.Name = "label12";
-            label12.Size = new Size(95, 21);
-            label12.TabIndex = 18;
-            label12.Text = "Ім'я клієнта:";
+            labelClientName.AutoSize = true;
+            labelClientName.Font = new Font("Segoe UI", 12F);
+            labelClientName.Location = new Point(12, 346);
+            labelClientName.Name = "label12";
+            labelClientName.Size = new Size(95, 21);
+            labelClientName.TabIndex = 18;
+            labelClientName.Text = "Ім'я клієнта:";
             // 
             // label13
             // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 12F);
-            label13.Location = new Point(12, 325);
-            label13.Name = "label13";
-            label13.Size = new Size(83, 21);
-            label13.TabIndex = 17;
-            label13.Text = "ID клієнта:";
+            labelClientId.AutoSize = true;
+            labelClientId.Font = new Font("Segoe UI", 12F);
+            labelClientId.Location = new Point(12, 325);
+            labelClientId.Name = "label13";
+            labelClientId.Size = new Size(83, 21);
+            labelClientId.TabIndex = 17;
+            labelClientId.Text = "ID клієнта:";
             // 
             // label14
             // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 12F);
-            label14.Location = new Point(12, 156);
-            label14.Name = "label14";
-            label14.Size = new Size(60, 21);
-            label14.TabIndex = 16;
-            label14.Text = "Статус:";
+            labelItemStatus.AutoSize = true;
+            labelItemStatus.Font = new Font("Segoe UI", 12F);
+            labelItemStatus.Location = new Point(12, 156);
+            labelItemStatus.Name = "label14";
+            labelItemStatus.Size = new Size(60, 21);
+            labelItemStatus.TabIndex = 16;
+            labelItemStatus.Text = "Статус:";
             // 
             // label15
             // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI", 12F);
-            label15.Location = new Point(12, 135);
-            label15.Name = "label15";
-            label15.Size = new Size(188, 21);
-            label15.TabIndex = 15;
-            label15.Text = "Термін збереження (дн.):";
+            labelStorageDays.AutoSize = true;
+            labelStorageDays.Font = new Font("Segoe UI", 12F);
+            labelStorageDays.Location = new Point(12, 135);
+            labelStorageDays.Name = "label15";
+            labelStorageDays.Size = new Size(188, 21);
+            labelStorageDays.TabIndex = 15;
+            labelStorageDays.Text = "Термін збереження (дн.):";
             // 
             // label16
             // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Segoe UI", 12F);
-            label16.Location = new Point(12, 114);
-            label16.Name = "label16";
-            label16.Size = new Size(115, 21);
-            label16.TabIndex = 14;
-            label16.Text = "Дата прийому:";
+            labelDepositDate.AutoSize = true;
+            labelDepositDate.Font = new Font("Segoe UI", 12F);
+            labelDepositDate.Location = new Point(12, 114);
+            labelDepositDate.Name = "label16";
+            labelDepositDate.Size = new Size(115, 21);
+            labelDepositDate.TabIndex = 14;
+            labelDepositDate.Text = "Дата прийому:";
             // 
             // label17
             // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Segoe UI", 12F);
-            label17.Location = new Point(12, 93);
-            label17.Name = "label17";
-            label17.Size = new Size(153, 21);
-            label17.TabIndex = 13;
-            label17.Text = "Сума кредиту (грн.):";
+            labelLoanAmount.AutoSize = true;
+            labelLoanAmount.Font = new Font("Segoe UI", 12F);
+            labelLoanAmount.Location = new Point(12, 93);
+            labelLoanAmount.Name = "label17";
+            labelLoanAmount.Size = new Size(153, 21);
+            labelLoanAmount.TabIndex = 13;
+            labelLoanAmount.Text = "Сума кредиту (грн.):";
             // 
             // label18
             // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Segoe UI", 12F);
-            label18.Location = new Point(12, 72);
-            label18.Name = "label18";
-            label18.Size = new Size(186, 21);
-            label18.TabIndex = 12;
-            label18.Text = "Оціночна вартість (грн.):";
+            labelEstimatedValue.AutoSize = true;
+            labelEstimatedValue.Font = new Font("Segoe UI", 12F);
+            labelEstimatedValue.Location = new Point(12, 72);
+            labelEstimatedValue.Name = "label18";
+            labelEstimatedValue.Size = new Size(186, 21);
+            labelEstimatedValue.TabIndex = 12;
+            labelEstimatedValue.Text = "Оціночна вартість (грн.):";
             // 
             // label19
             // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Segoe UI", 12F);
-            label19.Location = new Point(12, 30);
-            label19.Name = "label19";
-            label19.Size = new Size(108, 21);
-            label19.TabIndex = 11;
-            label19.Text = "Назва товару:";
+            labelItemName.AutoSize = true;
+            labelItemName.Font = new Font("Segoe UI", 12F);
+            labelItemName.Location = new Point(12, 30);
+            labelItemName.Name = "label19";
+            labelItemName.Size = new Size(108, 21);
+            labelItemName.TabIndex = 11;
+            labelItemName.Text = "Назва товару:";
             // 
             // label20
             // 
-            label20.AutoSize = true;
-            label20.Font = new Font("Segoe UI", 12F);
-            label20.Location = new Point(12, 9);
-            label20.Name = "label20";
-            label20.Size = new Size(81, 21);
-            label20.TabIndex = 10;
-            label20.Text = "ID товару:";
+            labelItemId.AutoSize = true;
+            labelItemId.Font = new Font("Segoe UI", 12F);
+            labelItemId.Location = new Point(12, 9);
+            labelItemId.Name = "label20";
+            labelItemId.Size = new Size(81, 21);
+            labelItemId.TabIndex = 10;
+            labelItemId.Text = "ID товару:";
             // 
             // label21
             // 
-            label21.AutoSize = true;
-            label21.Font = new Font("Segoe UI", 12F);
-            label21.Location = new Point(12, 212);
-            label21.Name = "label21";
-            label21.Size = new Size(207, 21);
-            label21.TabIndex = 21;
-            label21.Text = "Дата продажу/повернення:";
+            labelSaleReturnDate.AutoSize = true;
+            labelSaleReturnDate.Font = new Font("Segoe UI", 12F);
+            labelSaleReturnDate.Location = new Point(12, 212);
+            labelSaleReturnDate.Name = "label21";
+            labelSaleReturnDate.Size = new Size(207, 21);
+            labelSaleReturnDate.TabIndex = 21;
+            labelSaleReturnDate.Text = "Дата продажу/повернення:";
             // 
             // textBox1
             // 
-            textBox1.BackColor = SystemColors.Window;
-            textBox1.ForeColor = SystemColors.WindowText;
-            textBox1.Location = new Point(315, 12);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(298, 23);
-            textBox1.TabIndex = 22;
+            textItemId.BackColor = SystemColors.Window;
+            textItemId.ForeColor = SystemColors.WindowText;
+            textItemId.Location = new Point(315, 12);
+            textItemId.Name = "textBox1";
+            textItemId.ReadOnly = true;
+            textItemId.Size = new Size(298, 23);
+            textItemId.TabIndex = 22;
             // 
             // textBox2
             // 
-            textBox2.BackColor = SystemColors.Window;
-            textBox2.ForeColor = SystemColors.WindowText;
-            textBox2.Location = new Point(315, 32);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(298, 23);
-            textBox2.TabIndex = 23;
+            textItemName.BackColor = SystemColors.Window;
+            textItemName.ForeColor = SystemColors.WindowText;
+            textItemName.Location = new Point(315, 32);
+            textItemName.Name = "textBox2";
+            textItemName.ReadOnly = true;
+            textItemName.Size = new Size(298, 23);
+            textItemName.TabIndex = 23;
             // 
             // textBox3
             // 
-            textBox3.BackColor = SystemColors.Window;
-            textBox3.ForeColor = SystemColors.WindowText;
-            textBox3.Location = new Point(315, 74);
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(298, 23);
-            textBox3.TabIndex = 24;
+            textEstimatedValue.BackColor = SystemColors.Window;
+            textEstimatedValue.ForeColor = SystemColors.WindowText;
+            textEstimatedValue.Location = new Point(315, 74);
+            textEstimatedValue.Name = "textBox3";
+            textEstimatedValue.ReadOnly = true;
+            textEstimatedValue.Size = new Size(298, 23);
+            textEstimatedValue.TabIndex = 24;
             // 
             // textBox4
             // 
-            textBox4.BackColor = SystemColors.Window;
-            textBox4.ForeColor = SystemColors.WindowText;
-            textBox4.Location = new Point(315, 95);
-            textBox4.Name = "textBox4";
-            textBox4.ReadOnly = true;
-            textBox4.Size = new Size(298, 23);
-            textBox4.TabIndex = 25;
+            textLoanAmount.BackColor = SystemColors.Window;
+            textLoanAmount.ForeColor = SystemColors.WindowText;
+            textLoanAmount.Location = new Point(315, 95);
+            textLoanAmount.Name = "textBox4";
+            textLoanAmount.ReadOnly = true;
+            textLoanAmount.Size = new Size(298, 23);
+            textLoanAmount.TabIndex = 25;
             // 
             // textBox5
             // 
-            textBox5.BackColor = SystemColors.Window;
-            textBox5.ForeColor = SystemColors.WindowText;
-            textBox5.Location = new Point(315, 116);
-            textBox5.Name = "textBox5";
-            textBox5.ReadOnly = true;
-            textBox5.Size = new Size(298, 23);
-            textBox5.TabIndex = 26;
+            textDepositDate.BackColor = SystemColors.Window;
+            textDepositDate.ForeColor = SystemColors.WindowText;
+            textDepositDate.Location = new Point(315, 116);
+            textDepositDate.Name = "textBox5";
+            textDepositDate.ReadOnly = true;
+            textDepositDate.Size = new Size(298, 23);
+            textDepositDate.TabIndex = 26;
             // 
             // textBox6
             // 
-            textBox6.BackColor = SystemColors.Window;
-            textBox6.ForeColor = SystemColors.WindowText;
-            textBox6.Location = new Point(315, 137);
-            textBox6.Name = "textBox6";
-            textBox6.ReadOnly = true;
-            textBox6.Size = new Size(298, 23);
-            textBox6.TabIndex = 27;
+            textStorageDays.BackColor = SystemColors.Window;
+            textStorageDays.ForeColor = SystemColors.WindowText;
+            textStorageDays.Location = new Point(315, 137);
+            textStorageDays.Name = "textBox6";
+            textStorageDays.ReadOnly = true;
+            textStorageDays.Size = new Size(298, 23);
+            textStorageDays.TabIndex = 27;
             // 
             // textBox7
             // 
-            textBox7.BackColor = SystemColors.Window;
-            textBox7.ForeColor = SystemColors.WindowText;
-            textBox7.Location = new Point(315, 158);
-            textBox7.Name = "textBox7";
-            textBox7.ReadOnly = true;
-            textBox7.Size = new Size(298, 23);
-            textBox7.TabIndex = 28;
+            textItemStatus.BackColor = SystemColors.Window;
+            textItemStatus.ForeColor = SystemColors.WindowText;
+            textItemStatus.Location = new Point(315, 158);
+            textItemStatus.Name = "textBox7";
+            textItemStatus.ReadOnly = true;
+            textItemStatus.Size = new Size(298, 23);
+            textItemStatus.TabIndex = 28;
             // 
             // textBox8
             // 
-            textBox8.BackColor = SystemColors.Window;
-            textBox8.ForeColor = SystemColors.WindowText;
-            textBox8.Location = new Point(315, 214);
-            textBox8.Name = "textBox8";
-            textBox8.ReadOnly = true;
-            textBox8.Size = new Size(298, 23);
-            textBox8.TabIndex = 29;
+            textSaleReturnDate.BackColor = SystemColors.Window;
+            textSaleReturnDate.ForeColor = SystemColors.WindowText;
+            textSaleReturnDate.Location = new Point(315, 214);
+            textSaleReturnDate.Name = "textBox8";
+            textSaleReturnDate.ReadOnly = true;
+            textSaleReturnDate.Size = new Size(298, 23);
+            textSaleReturnDate.TabIndex = 29;
             // 
             // textBox9
             // 
-            textBox9.BackColor = SystemColors.Window;
-            textBox9.ForeColor = SystemColors.WindowText;
-            textBox9.Location = new Point(315, 327);
-            textBox9.Name = "textBox9";
-            textBox9.ReadOnly = true;
-            textBox9.Size = new Size(298, 23);
-            textBox9.TabIndex = 30;
+            textClientId.BackColor = SystemColors.Window;
+            textClientId.ForeColor = SystemColors.WindowText;
+            textClientId.Location = new Point(315, 327);
+            textClientId.Name = "textBox9";
+            textClientId.ReadOnly = true;
+            textClientId.Size = new Size(298, 23);
+            textClientId.TabIndex = 30;
             // 
             // textBox10
             // 
-            textBox10.BackColor = SystemColors.Window;
-            textBox10.ForeColor = SystemColors.WindowText;
-            textBox10.Location = new Point(315, 348);
-            textBox10.Name = "textBox10";
-            textBox10.ReadOnly = true;
-            textBox10.Size = new Size(298, 23);
-            textBox10.TabIndex = 31;
+            textClientName.BackColor = SystemColors.Window;
+            textClientName.ForeColor = SystemColors.WindowText;
+            textClientName.Location = new Point(315, 348);
+            textClientName.Name = "textBox10";
+            textClientName.ReadOnly = true;
+            textClientName.Size = new Size(298, 23);
+            textClientName.TabIndex = 31;
             // 
             // textBox11
             // 
-            textBox11.BackColor = SystemColors.Window;
-            textBox11.ForeColor = SystemColors.WindowText;
-            textBox11.Location = new Point(315, 369);
-            textBox11.Name = "textBox11";
-            textBox11.ReadOnly = true;
-            textBox11.Size = new Size(298, 23);
-            textBox11.TabIndex = 32;
+            textClientPhone.BackColor = SystemColors.Window;
+            textClientPhone.ForeColor = SystemColors.WindowText;
+            textClientPhone.Location = new Point(315, 369);
+            textClientPhone.Name = "textBox11";
+            textClientPhone.ReadOnly = true;
+            textClientPhone.Size = new Size(298, 23);
+            textClientPhone.TabIndex = 32;
             // 
             // textBox12
             // 
-            textBox12.BackColor = SystemColors.Window;
-            textBox12.ForeColor = SystemColors.WindowText;
-            textBox12.Location = new Point(315, 53);
-            textBox12.Name = "textBox12";
-            textBox12.ReadOnly = true;
-            textBox12.Size = new Size(298, 23);
-            textBox12.TabIndex = 34;
+            textItemCategory.BackColor = SystemColors.Window;
+            textItemCategory.ForeColor = SystemColors.WindowText;
+            textItemCategory.Location = new Point(315, 53);
+            textItemCategory.Name = "textBox12";
+            textItemCategory.ReadOnly = true;
+            textItemCategory.Size = new Size(298, 23);
+            textItemCategory.TabIndex = 34;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(12, 51);
-            label1.Name = "label1";
-            label1.Size = new Size(81, 21);
-            label1.TabIndex = 33;
-            label1.Text = "Категорія:";
+            labelItemCategory.AutoSize = true;
+            labelItemCategory.Font = new Font("Segoe UI", 12F);
+            labelItemCategory.Location = new Point(12, 51);
+            labelItemCategory.Name = "label1";
+            labelItemCategory.Size = new Size(81, 21);
+            labelItemCategory.TabIndex = 33;
+            labelItemCategory.Text = "Категорія:";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(12, 233);
-            label2.Name = "label2";
-            label2.Size = new Size(295, 21);
-            label2.TabIndex = 35;
-            label2.Text = "Ціна, по якій продано/повернено (грн.):";
+            labelSaleReturnPrice.AutoSize = true;
+            labelSaleReturnPrice.Font = new Font("Segoe UI", 12F);
+            labelSaleReturnPrice.Location = new Point(12, 233);
+            labelSaleReturnPrice.Name = "label2";
+            labelSaleReturnPrice.Size = new Size(295, 21);
+            labelSaleReturnPrice.TabIndex = 35;
+            labelSaleReturnPrice.Text = "Ціна, по якій продано/повернено (грн.):";
             // 
             // textBox13
             // 
-            textBox13.BackColor = SystemColors.Window;
-            textBox13.ForeColor = SystemColors.WindowText;
-            textBox13.Location = new Point(315, 236);
-            textBox13.Name = "textBox13";
-            textBox13.ReadOnly = true;
-            textBox13.Size = new Size(298, 23);
-            textBox13.TabIndex = 36;
+            textSaleReturnPrice.BackColor = SystemColors.Window;
+            textSaleReturnPrice.ForeColor = SystemColors.WindowText;
+            textSaleReturnPrice.Location = new Point(315, 236);
+            textSaleReturnPrice.Name = "textBox13";
+            textSaleReturnPrice.ReadOnly = true;
+            textSaleReturnPrice.Size = new Size(298, 23);
+            textSaleReturnPrice.TabIndex = 36;
             // 
             // FullInfo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(854, 426);
-            Controls.Add(textBox13);
-            Controls.Add(label2);
-            Controls.Add(textBox12);
-            Controls.Add(label1);
-            Controls.Add(textBox11);
-            Controls.Add(textBox10);
-            Controls.Add(textBox9);
-            Controls.Add(textBox8);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label21);
-            Controls.Add(label11);
-            Controls.Add(label12);
-            Controls.Add(label13);
-            Controls.Add(label14);
-            Controls.Add(label15);
-            Controls.Add(label16);
-            Controls.Add(label17);
-            Controls.Add(label18);
-            Controls.Add(label19);
-            Controls.Add(label20);
+            Controls.Add(textSaleReturnPrice);
+            Controls.Add(labelSaleReturnPrice);
+            Controls.Add(textItemCategory);
+            Controls.Add(labelItemCategory);
+            Controls.Add(textClientPhone);
+            Controls.Add(textClientName);
+            Controls.Add(textClientId);
+            Controls.Add(textSaleReturnDate);
+            Controls.Add(textItemStatus);
+            Controls.Add(textStorageDays);
+            Controls.Add(textDepositDate);
+            Controls.Add(textLoanAmount);
+            Controls.Add(textEstimatedValue);
+            Controls.Add(textItemName);
+            Controls.Add(textItemId);
+            Controls.Add(labelSaleReturnDate);
+            Controls.Add(labelClientPhone);
+            Controls.Add(labelClientName);
+            Controls.Add(labelClientId);
+            Controls.Add(labelItemStatus);
+            Controls.Add(labelStorageDays);
+            Controls.Add(labelDepositDate);
+            Controls.Add(labelLoanAmount);
+            Controls.Add(labelEstimatedValue);
+            Controls.Add(labelItemName);
+            Controls.Add(labelItemId);
             MinimumSize = new Size(569, 368);
             Name = "FullInfo";
             Text = "Повна інформація";
@@ -355,31 +355,31 @@
         }
 
         #endregion
-        private Label label11;
-        private Label label12;
-        private Label label13;
-        private Label label14;
-        private Label label15;
-        private Label label16;
-        private Label label17;
-        private Label label18;
-        private Label label19;
-        private Label label20;
-        private Label label21;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
-        private TextBox textBox8;
-        private TextBox textBox9;
-        private TextBox textBox10;
-        private TextBox textBox11;
-        private TextBox textBox12;
-        private Label label1;
-        private Label label2;
-        private TextBox textBox13;
+        private Label labelClientPhone;
+        private Label labelClientName;
+        private Label labelClientId;
+        private Label labelItemStatus;
+        private Label labelStorageDays;
+        private Label labelDepositDate;
+        private Label labelLoanAmount;
+        private Label labelEstimatedValue;
+        private Label labelItemName;
+        private Label labelItemId;
+        private Label labelSaleReturnDate;
+        private TextBox textItemId;
+        private TextBox textItemName;
+        private TextBox textEstimatedValue;
+        private TextBox textLoanAmount;
+        private TextBox textDepositDate;
+        private TextBox textStorageDays;
+        private TextBox textItemStatus;
+        private TextBox textSaleReturnDate;
+        private TextBox textClientId;
+        private TextBox textClientName;
+        private TextBox textClientPhone;
+        private TextBox textItemCategory;
+        private Label labelItemCategory;
+        private Label labelSaleReturnPrice;
+        private TextBox textSaleReturnPrice;
     }
 }
