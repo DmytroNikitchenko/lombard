@@ -55,7 +55,7 @@ namespace lombard.View
                     MessageBox.Show("Оціночна вартість має бути більше або дорівнювати сумі кредиту", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                
+
                 if (client == null)
                 {
                     client = new Client

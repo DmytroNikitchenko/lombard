@@ -97,9 +97,9 @@
             label2.AutoSize = true;
             label2.Location = new Point(12, 38);
             label2.Name = "label2";
-            label2.Size = new Size(31, 15);
+            label2.Size = new Size(29, 15);
             label2.TabIndex = 5;
-            label2.Text = "ФІО:";
+            label2.Text = "ПІБ:";
             // 
             // label3
             // 

@@ -1,4 +1,5 @@
 ﻿using lombard.Models;
+using System.Drawing.Printing;
 
 
 namespace lombard.View
@@ -322,6 +323,56 @@ namespace lombard.View
             DataGridViewRow selectedRow = ArrayViev.SelectedRows[0];
             EditForm editForm = new EditForm(this, database, selectedRow);
             editForm.Show();
+        }
+
+        private void buttonPrint_Click(object sender, EventArgs e)
+        {
+            if (ArrayViev.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = ArrayViev.SelectedRows[0];
+                Item item = database.GetItemById(Convert.ToInt32(row.Cells["Id"].Value));
+                Client client = database.GetClientById(Convert.ToInt32(row.Cells["ClientId"].Value));
+
+                string receiptText =
+                    "КВИТАНЦІЯ ЛОМБАРДУ\n" +
+                    "------------------------\n" +
+                    $"ПІБ клієнта: {client.FullName}\n" +
+                    $"Телефон: {client.PhoneNumber}\n" +
+                    $"Категорія: {item.Category}\n" +
+                    $"Назва предмета: {item.Name}\n" +
+                    $"Дата застави: {item.DepositDate:dd.MM.yyyy}\n" +
+                    $"Сума позики: {item.LoanAmount} грн\n" +
+                    $"Оціночна вартість: {item.EstimatedValue} грн\n" +
+                    $"Термін зберігання: {item.StoragePeriodDays} днів\n" +
+                    $"Відсоткова ставка: {Math.Round((item.EstimatedValue / item.LoanAmount - 1) / item.StoragePeriodDays * 100, 2)}% на день\n" +
+                    $"Нараховані відсотки: {(item.RedemptionPrice - item.LoanAmount)} грн\n" +
+                    $"Сума до повернення: {item.RedemptionPrice} грн\n" +
+                    $"Статус: {item.StatusToSaleOrReturn}\n" +
+                    (item.Status != ItemStatus.Зберігається ? $"Дата повернення/продажу: {item.SaleReturnDate:dd.MM.yyyy}\n" : "") +
+                    "------------------------\n" +
+                    "Дата друку: " + DateTime.Now.ToString("dd.MM.yyyy");
+
+
+                PrintDocument printDoc = new PrintDocument();
+                printDoc.PrintPage += (s, ev) =>
+                {
+                    Font font = new Font("Courier New", 14);
+                    ev.Graphics.DrawString(receiptText, font, Brushes.Black,
+                        new RectangleF(50, 50, ev.PageBounds.Width - 100, ev.PageBounds.Height - 100));
+                };
+
+                PrintDialog printDialog = new PrintDialog();
+                printDialog.Document = printDoc;
+
+                if (printDialog.ShowDialog() == DialogResult.OK)
+                {
+                    printDoc.Print();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Виберіть рядок для друку!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

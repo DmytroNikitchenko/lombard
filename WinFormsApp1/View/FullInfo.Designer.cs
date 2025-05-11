@@ -74,9 +74,9 @@
             labelClientName.Font = new Font("Segoe UI", 12F);
             labelClientName.Location = new Point(12, 346);
             labelClientName.Name = "labelClientName";
-            labelClientName.Size = new Size(95, 21);
+            labelClientName.Size = new Size(92, 21);
             labelClientName.TabIndex = 18;
-            labelClientName.Text = "Ім'я клієнта:";
+            labelClientName.Text = "ПІБ клієнта:";
             // 
             // labelClientId
             // 

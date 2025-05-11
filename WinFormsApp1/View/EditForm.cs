@@ -18,7 +18,7 @@ namespace lombard.View
             itemToEdit = database.GetItemById(ItemId);
             this.mainForm = mainForm;
             this.client = database.GetClientById(itemToEdit.ClientId);
-            
+
             textBoxItemName.Text = itemToEdit.Name;
             textBoxEstimatedValue.Text = itemToEdit.EstimatedValue.ToString();
             textBoxLoanAmount.Text = itemToEdit.LoanAmount.ToString();
@@ -50,7 +50,7 @@ namespace lombard.View
                     MessageBox.Show("Оціночна вартість має бути більше або дорівнювати сумі кредиту", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                
+
                 if (client != null)
                 {
                     client.FullName = textBoxFullName.Text;

@@ -45,7 +45,7 @@ namespace lombard.View
                 filtered = filtered.Where(item => item.Status == status);
             }
             // статус для продажу
-            if (selectedStatusForSaleOrReturn!="Усі" && comboBoxCategory.SelectedIndex != -1)
+            if (selectedStatusForSaleOrReturn != "Усі" && comboBoxCategory.SelectedIndex != -1)
             {
                 filtered = filtered.Where(item => item.StatusToSaleOrReturn == selectedStatusForSaleOrReturn);
             }
