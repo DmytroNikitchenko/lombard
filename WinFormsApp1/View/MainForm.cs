@@ -11,6 +11,7 @@ namespace lombard.View
             InitializeComponent();
             database = DatabaseManager.LoadData();
             ArrayViev.DataSource = database.Items;
+            database.Items.Sort((x, y) => x.Id.CompareTo(y.Id));
 
             FormatColumnsNames(ArrayViev);
         }
@@ -27,6 +28,7 @@ namespace lombard.View
             dataGridView.Columns["ClientId"].HeaderText = "ID клієнта";
             dataGridView.Columns["SaleReturnDate"].HeaderText = "Дата продажу/повернення";
             dataGridView.Columns["Category"].HeaderText = "Категорія";
+            dataGridView.Columns["RedemptionPrice"].HeaderText = "Викупна ціна";
         }
         public void RefreshDataGrid()
         {

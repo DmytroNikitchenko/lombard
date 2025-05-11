@@ -7,8 +7,8 @@ namespace lombard.View
         public FullInfo(PawnshopDatabase database, DataGridViewRow row)
         {
             InitializeComponent();
-            int ClientId = Convert.ToInt32(row.Cells["ClientId"].Value);
-            Client foundClient = database.GetClientById(ClientId);
+            Item foundItem = database.GetItemById(Convert.ToInt32(row.Cells["Id"].Value));
+            Client foundClient = database.GetClientById(Convert.ToInt32(row.Cells["ClientId"].Value));
 
 
             textBox1.Text = row.Cells["Id"].Value.ToString();
@@ -24,12 +24,18 @@ namespace lombard.View
             {
                 textBox8.Visible = false;
                 label21.Visible = false;
+                label2.Visible = false;
+                textBox13.Visible = false;
             }
             else
             {
                 textBox8.Text = row.Cells["SaleReturnDate"].Value.ToString() == "01.01.0001 0:00:00" ? "Зберігається" : row.Cells["SaleReturnDate"].Value.ToString();
                 textBox8.Visible = true;
                 label21.Visible = true;
+
+                textBox13.Text = row.Cells["Status"].Value.ToString() == "Повернено" ? row.Cells["RedemptionPrice"].Value.ToString() : row.Cells["EstimatedValue"].Value.ToString();
+                label2.Visible = true;
+                textBox13.Visible = true;
             }
             textBox9.Text = row.Cells["ClientId"].Value.ToString();
             textBox10.Text = foundClient.FullName.ToString();

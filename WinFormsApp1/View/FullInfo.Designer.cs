@@ -52,13 +52,15 @@
             textBox11 = new TextBox();
             textBox12 = new TextBox();
             label1 = new Label();
+            label2 = new Label();
+            textBox13 = new TextBox();
             SuspendLayout();
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 12F);
-            label11.Location = new Point(12, 294);
+            label11.Location = new Point(12, 367);
             label11.Name = "label11";
             label11.Size = new Size(188, 21);
             label11.TabIndex = 19;
@@ -68,7 +70,7 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 12F);
-            label12.Location = new Point(12, 273);
+            label12.Location = new Point(12, 346);
             label12.Name = "label12";
             label12.Size = new Size(95, 21);
             label12.TabIndex = 18;
@@ -78,7 +80,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 12F);
-            label13.Location = new Point(12, 252);
+            label13.Location = new Point(12, 325);
             label13.Name = "label13";
             label13.Size = new Size(83, 21);
             label13.TabIndex = 17;
@@ -158,7 +160,7 @@
             // 
             label21.AutoSize = true;
             label21.Font = new Font("Segoe UI", 12F);
-            label21.Location = new Point(12, 206);
+            label21.Location = new Point(12, 212);
             label21.Name = "label21";
             label21.Size = new Size(207, 21);
             label21.TabIndex = 21;
@@ -168,7 +170,7 @@
             // 
             textBox1.BackColor = SystemColors.Window;
             textBox1.ForeColor = SystemColors.WindowText;
-            textBox1.Location = new Point(241, 11);
+            textBox1.Location = new Point(315, 12);
             textBox1.Name = "textBox1";
             textBox1.ReadOnly = true;
             textBox1.Size = new Size(298, 23);
@@ -178,7 +180,7 @@
             // 
             textBox2.BackColor = SystemColors.Window;
             textBox2.ForeColor = SystemColors.WindowText;
-            textBox2.Location = new Point(241, 31);
+            textBox2.Location = new Point(315, 32);
             textBox2.Name = "textBox2";
             textBox2.ReadOnly = true;
             textBox2.Size = new Size(298, 23);
@@ -188,7 +190,7 @@
             // 
             textBox3.BackColor = SystemColors.Window;
             textBox3.ForeColor = SystemColors.WindowText;
-            textBox3.Location = new Point(241, 73);
+            textBox3.Location = new Point(315, 74);
             textBox3.Name = "textBox3";
             textBox3.ReadOnly = true;
             textBox3.Size = new Size(298, 23);
@@ -198,7 +200,7 @@
             // 
             textBox4.BackColor = SystemColors.Window;
             textBox4.ForeColor = SystemColors.WindowText;
-            textBox4.Location = new Point(241, 94);
+            textBox4.Location = new Point(315, 95);
             textBox4.Name = "textBox4";
             textBox4.ReadOnly = true;
             textBox4.Size = new Size(298, 23);
@@ -208,7 +210,7 @@
             // 
             textBox5.BackColor = SystemColors.Window;
             textBox5.ForeColor = SystemColors.WindowText;
-            textBox5.Location = new Point(241, 115);
+            textBox5.Location = new Point(315, 116);
             textBox5.Name = "textBox5";
             textBox5.ReadOnly = true;
             textBox5.Size = new Size(298, 23);
@@ -218,7 +220,7 @@
             // 
             textBox6.BackColor = SystemColors.Window;
             textBox6.ForeColor = SystemColors.WindowText;
-            textBox6.Location = new Point(241, 136);
+            textBox6.Location = new Point(315, 137);
             textBox6.Name = "textBox6";
             textBox6.ReadOnly = true;
             textBox6.Size = new Size(298, 23);
@@ -228,7 +230,7 @@
             // 
             textBox7.BackColor = SystemColors.Window;
             textBox7.ForeColor = SystemColors.WindowText;
-            textBox7.Location = new Point(241, 157);
+            textBox7.Location = new Point(315, 158);
             textBox7.Name = "textBox7";
             textBox7.ReadOnly = true;
             textBox7.Size = new Size(298, 23);
@@ -238,7 +240,7 @@
             // 
             textBox8.BackColor = SystemColors.Window;
             textBox8.ForeColor = SystemColors.WindowText;
-            textBox8.Location = new Point(241, 207);
+            textBox8.Location = new Point(315, 214);
             textBox8.Name = "textBox8";
             textBox8.ReadOnly = true;
             textBox8.Size = new Size(298, 23);
@@ -248,7 +250,7 @@
             // 
             textBox9.BackColor = SystemColors.Window;
             textBox9.ForeColor = SystemColors.WindowText;
-            textBox9.Location = new Point(241, 253);
+            textBox9.Location = new Point(315, 327);
             textBox9.Name = "textBox9";
             textBox9.ReadOnly = true;
             textBox9.Size = new Size(298, 23);
@@ -258,7 +260,7 @@
             // 
             textBox10.BackColor = SystemColors.Window;
             textBox10.ForeColor = SystemColors.WindowText;
-            textBox10.Location = new Point(241, 274);
+            textBox10.Location = new Point(315, 348);
             textBox10.Name = "textBox10";
             textBox10.ReadOnly = true;
             textBox10.Size = new Size(298, 23);
@@ -268,7 +270,7 @@
             // 
             textBox11.BackColor = SystemColors.Window;
             textBox11.ForeColor = SystemColors.WindowText;
-            textBox11.Location = new Point(241, 295);
+            textBox11.Location = new Point(315, 369);
             textBox11.Name = "textBox11";
             textBox11.ReadOnly = true;
             textBox11.Size = new Size(298, 23);
@@ -278,7 +280,7 @@
             // 
             textBox12.BackColor = SystemColors.Window;
             textBox12.ForeColor = SystemColors.WindowText;
-            textBox12.Location = new Point(241, 52);
+            textBox12.Location = new Point(315, 53);
             textBox12.Name = "textBox12";
             textBox12.ReadOnly = true;
             textBox12.Size = new Size(298, 23);
@@ -294,11 +296,33 @@
             label1.TabIndex = 33;
             label1.Text = "Категорія:";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F);
+            label2.Location = new Point(12, 233);
+            label2.Name = "label2";
+            label2.Size = new Size(295, 21);
+            label2.TabIndex = 35;
+            label2.Text = "Ціна, по якій продано/повернено (грн.):";
+            // 
+            // textBox13
+            // 
+            textBox13.BackColor = SystemColors.Window;
+            textBox13.ForeColor = SystemColors.WindowText;
+            textBox13.Location = new Point(315, 236);
+            textBox13.Name = "textBox13";
+            textBox13.ReadOnly = true;
+            textBox13.Size = new Size(298, 23);
+            textBox13.TabIndex = 36;
+            // 
             // FullInfo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(854, 426);
+            Controls.Add(textBox13);
+            Controls.Add(label2);
             Controls.Add(textBox12);
             Controls.Add(label1);
             Controls.Add(textBox11);
@@ -355,5 +379,7 @@
         private TextBox textBox11;
         private TextBox textBox12;
         private Label label1;
+        private Label label2;
+        private TextBox textBox13;
     }
 }
