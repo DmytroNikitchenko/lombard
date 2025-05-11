@@ -7,20 +7,21 @@ namespace lombard.View
         public FullInfo(PawnshopDatabase database, DataGridViewRow row)
         {
             InitializeComponent();
-            Item foundItem = database.GetItemById(Convert.ToInt32(row.Cells["Id"].Value));
-            Client foundClient = database.GetClientById(Convert.ToInt32(row.Cells["ClientId"].Value));
 
+            int itemId = Convert.ToInt32(row.Cells["Id"].Value);
+            Item foundItem = database.GetItemById(itemId);
+            Client foundClient = database.GetClientById(foundItem.ClientId);
 
-            textItemId.Text = row.Cells["Id"].Value.ToString();
-            textItemName.Text = row.Cells["Name"].Value.ToString();
-            textEstimatedValue.Text = row.Cells["EstimatedValue"].Value.ToString();
-            textLoanAmount.Text = row.Cells["LoanAmount"].Value.ToString();
-            textDepositDate.Text = row.Cells["DepositDate"].Value.ToString();
-            textStorageDays.Text = row.Cells["StoragePeriodDays"].Value.ToString();
-            textItemStatus.Text = row.Cells["Status"].Value.ToString();
-            textItemCategory.Text = row.Cells["Category"].Value.ToString();
+            textItemId.Text = foundItem.Id.ToString();
+            textItemName.Text = foundItem.Name;
+            textEstimatedValue.Text = foundItem.EstimatedValue.ToString();
+            textLoanAmount.Text = foundItem.LoanAmount.ToString();
+            textDepositDate.Text = foundItem.DepositDate.ToShortDateString();
+            textStorageDays.Text = foundItem.StoragePeriodDays.ToString();
+            textItemStatus.Text = foundItem.Status.ToString();
+            textItemCategory.Text = foundItem.Category;
 
-            if (row.Cells["Status"].Value.ToString() == "Зберігається")
+            if (foundItem.Status == ItemStatus.Зберігається)
             {
                 textSaleReturnDate.Visible = false;
                 labelSaleReturnDate.Visible = false;
@@ -29,17 +30,22 @@ namespace lombard.View
             }
             else
             {
-                textSaleReturnDate.Text = row.Cells["SaleReturnDate"].Value.ToString() == "01.01.0001 0:00:00" ? "Зберігається" : row.Cells["SaleReturnDate"].Value.ToString();
+                textSaleReturnDate.Text = foundItem.SaleReturnDate == DateTime.MinValue
+                    ? "Зберігається"
+                    : foundItem.SaleReturnDate.ToShortDateString();
                 textSaleReturnDate.Visible = true;
                 labelSaleReturnDate.Visible = true;
 
-                textSaleReturnPrice.Text = row.Cells["Status"].Value.ToString() == "Повернено" ? row.Cells["RedemptionPrice"].Value.ToString() : row.Cells["EstimatedValue"].Value.ToString();
+                textSaleReturnPrice.Text = foundItem.Status == ItemStatus.Повернено
+                    ? foundItem.RedemptionPrice.ToString()
+                    : foundItem.EstimatedValue.ToString();
                 labelSaleReturnPrice.Visible = true;
                 textSaleReturnPrice.Visible = true;
             }
-            textClientId.Text = row.Cells["ClientId"].Value.ToString();
-            textClientName.Text = foundClient.FullName.ToString();
-            textClientPhone.Text = foundClient.PhoneNumber.ToString();
+
+            textClientId.Text = foundClient.Id.ToString();
+            textClientName.Text = foundClient.FullName;
+            textClientPhone.Text = foundClient.PhoneNumber;
         }
     }
 }

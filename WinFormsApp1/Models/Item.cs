@@ -12,39 +12,26 @@
         {
             get
             {
-                if (Status == ItemStatus.Зберігається)
+                DateTime endDate = DepositDate.AddDays(StoragePeriodDays);
+                DateTime currentDate = Status == ItemStatus.Зберігається ? DateTime.Now : SaleReturnDate;
+
+                // якщо строк зберігання вийшов викуп лише за EstimatedValue
+                if (currentDate > endDate)
                 {
-                    int days = StoragePeriodDays;
-
-                    decimal rate = (EstimatedValue / LoanAmount - 1) / days;
-
-                    int actualDays = (DateTime.Now - DepositDate).Days;
-                    if (actualDays < 0) actualDays = 0;
-                    if (actualDays > days) actualDays = days; // не виходимо за межі
-
-                    decimal interest = LoanAmount * rate * actualDays;
-                    return (int)LoanAmount + (int)interest;
+                    return (int)EstimatedValue;
                 }
-                else
-                {
-                    int days = StoragePeriodDays;
 
-                    decimal rate = (EstimatedValue / LoanAmount - 1) / days;
+                int actualDays = (currentDate - DepositDate).Days;
+                decimal rate = (EstimatedValue / LoanAmount - 1) / StoragePeriodDays;
+                decimal interest = LoanAmount * rate * actualDays;
 
-                    int actualDays = (SaleReturnDate - DepositDate).Days;
-                    if (actualDays < 0) actualDays = 0;
-                    if (actualDays > days) actualDays = days; // не виходимо за межі
-
-                    decimal interest = LoanAmount * rate * actualDays;
-                    return (int)LoanAmount + (int)interest;
-                }
+                return (int)(LoanAmount + interest);
             }
         }
         public DateTime DepositDate { get; set; }
         public int StoragePeriodDays { get; set; }
         public ItemStatus Status { get; set; }
         public int ClientId { get; set; }
-        public DateTime SaleReturnDate { get; set; }
-        
+        public DateTime SaleReturnDate { get; set; }        
     }
 }

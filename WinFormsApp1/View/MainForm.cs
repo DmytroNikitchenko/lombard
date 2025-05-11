@@ -251,6 +251,9 @@ namespace lombard.View
                     case "SaleReturnDate":
                         items.Sort((x, y) => x.SaleReturnDate.CompareTo(y.SaleReturnDate));
                         break;
+                    case "RedemptionPrice":
+                        items.Sort((x, y) => x.RedemptionPrice.CompareTo(y.RedemptionPrice));
+                        break;
                 }
             }
             else
@@ -286,6 +289,9 @@ namespace lombard.View
                         break;
                     case "SaleReturnDate":
                         items.Sort((x, y) => y.SaleReturnDate.CompareTo(x.SaleReturnDate));
+                        break;
+                    case "RedemptionPrice":
+                        items.Sort((x, y) => y.RedemptionPrice.CompareTo(x.RedemptionPrice));
                         break;
                 }
             }
