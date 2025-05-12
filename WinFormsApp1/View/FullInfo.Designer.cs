@@ -338,9 +338,9 @@
             labelStatusToSaleOrReturn.Font = new Font("Segoe UI", 12F);
             labelStatusToSaleOrReturn.Location = new Point(12, 177);
             labelStatusToSaleOrReturn.Name = "labelStatusToSaleOrReturn";
-            labelStatusToSaleOrReturn.Size = new Size(171, 21);
+            labelStatusToSaleOrReturn.Size = new Size(150, 21);
             labelStatusToSaleOrReturn.TabIndex = 37;
-            labelStatusToSaleOrReturn.Text = "Статус на до продажу:";
+            labelStatusToSaleOrReturn.Text = "Статус до продажу:";
             // 
             // textBoxBuyerName
             // 
@@ -355,9 +355,9 @@
             labelBuyerName.Font = new Font("Segoe UI", 12F);
             labelBuyerName.Location = new Point(15, 292);
             labelBuyerName.Name = "labelBuyerName";
-            labelBuyerName.Size = new Size(105, 21);
+            labelBuyerName.Size = new Size(102, 21);
             labelBuyerName.TabIndex = 40;
-            labelBuyerName.Text = "Ім'я покупця:";
+            labelBuyerName.Text = "ПІБ покупця:";
             // 
             // labelBuyerNumber
             // 

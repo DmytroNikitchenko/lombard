@@ -187,7 +187,7 @@
             buttonPrint.Name = "buttonPrint";
             buttonPrint.Size = new Size(135, 50);
             buttonPrint.TabIndex = 12;
-            buttonPrint.Text = "Друк чеку";
+            buttonPrint.Text = "Друк квитанції";
             buttonPrint.UseVisualStyleBackColor = true;
             buttonPrint.Click += buttonPrint_Click;
             // 

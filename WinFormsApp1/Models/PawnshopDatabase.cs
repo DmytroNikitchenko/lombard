@@ -35,6 +35,5 @@
         {
             return Clients.FirstOrDefault(c => c.FullName == name);
         }
-
     }
 }
