@@ -17,7 +17,7 @@ namespace lombard.View
         {
             string nameFilter = textBoxName.Text.Trim();
             string? selectedCategory = comboBoxCategory.SelectedItem?.ToString();
-            string? selectedStatus = comboBoxStorageStatus.SelectedItem?.ToString();
+            string? selectedStorageStatus = comboBoxStorageStatus.SelectedItem?.ToString();
             string? selectedStatusForSaleOrReturn = comboBoxStatusForSaleOrReturn.SelectedItem?.ToString();
 
             decimal minValue = numericMinEstimatedValue.Value;
@@ -40,7 +40,7 @@ namespace lombard.View
                 filtered = filtered.Where(item => item.Category == selectedCategory);
             }
             // Статус
-            if (selectedStatus != "Усі" && Enum.TryParse<ItemStatus>(selectedStatus, out var status) && comboBoxStorageStatus.SelectedIndex !=-1)
+            if (selectedStorageStatus != "Усі" && Enum.TryParse<ItemStatus>(selectedStorageStatus, out var status) && comboBoxStorageStatus.SelectedIndex != -1)
             {
                 filtered = filtered.Where(item => item.Status == status);
             }

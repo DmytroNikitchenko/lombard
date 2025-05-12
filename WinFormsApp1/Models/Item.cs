@@ -1,11 +1,13 @@
-﻿namespace lombard.Models
+﻿using System.ComponentModel;
+
+namespace lombard.Models
 {
     [Serializable]
     public class Item //клас предмета
-    {
-        public int Id { get; set; }
+    {       
+        public int Id { get; set; }        
         public string Category { get; set; } = "";
-        public string Name { get; set; } = "";
+        public string Name { get; set; } = "";        
         public decimal EstimatedValue { get; set; }
         public decimal LoanAmount { get; set; }
         public int RedemptionPrice
@@ -50,7 +52,10 @@
             }
         }
         public ItemStatus Status { get; set; }
-        public int ClientId { get; set; }
+        public int ClientId { get; set; }        
         public DateTime SaleReturnDate { get; set; }
+
+        [Browsable(false)]
+        public Client Buyer { get; set; }                      
     }
 }

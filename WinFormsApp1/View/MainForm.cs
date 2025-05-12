@@ -159,29 +159,13 @@ namespace lombard.View
         {
             if (ArrayViev.SelectedRows.Count > 0)
             {
-                var result = MessageBox.Show("Впевнені у продажі?", "Підтвердіть", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    DataGridViewRow selectedRow = ArrayViev.SelectedRows[0];
-                    int itemId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
-                    Item item = database.GetItemById(itemId);
-
-                    if (item != null)
-                    {
-                        item.Status = ItemStatus.Продано;
-                        item.SaleReturnDate = DateTime.Now;
-                        DatabaseManager.SaveData(database);
-                        RefreshDataGrid();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Виберіть рядок", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
+                DataGridViewRow selectedRow = ArrayViev.SelectedRows[0];
+                SellForm sellForm = new SellForm(this, database, selectedRow);
+                sellForm.Show();
             }
             else
             {
-                MessageBox.Show("Виберіть рядок", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Виберіть рядок для перегляду деталей!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void buttonSearch_Click(object sender, EventArgs e)
@@ -327,51 +311,86 @@ namespace lombard.View
 
         private void buttonPrint_Click(object sender, EventArgs e)
         {
-            if (ArrayViev.SelectedRows.Count > 0)
+            if (ArrayViev.SelectedRows.Count == 0)
             {
-                DataGridViewRow row = ArrayViev.SelectedRows[0];
-                Item item = database.GetItemById(Convert.ToInt32(row.Cells["Id"].Value));
-                Client client = database.GetClientById(Convert.ToInt32(row.Cells["ClientId"].Value));
+                MessageBox.Show("Виберіть рядок для друку!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-                string receiptText =
-                    "КВИТАНЦІЯ ЛОМБАРДУ\n" +
-                    "------------------------\n" +
-                    $"ПІБ клієнта: {client.FullName}\n" +
-                    $"Телефон: {client.PhoneNumber}\n" +
-                    $"Категорія: {item.Category}\n" +
-                    $"Назва предмета: {item.Name}\n" +
-                    $"Дата застави: {item.DepositDate:dd.MM.yyyy}\n" +
-                    $"Сума позики: {item.LoanAmount} грн\n" +
-                    $"Оціночна вартість: {item.EstimatedValue} грн\n" +
-                    $"Термін зберігання: {item.StoragePeriodDays} днів\n" +
-                    $"Відсоткова ставка: {Math.Round((item.EstimatedValue / item.LoanAmount - 1) / item.StoragePeriodDays * 100, 2)}% на день\n" +
-                    $"Нараховані відсотки: {(item.RedemptionPrice - item.LoanAmount)} грн\n" +
-                    $"Сума до повернення: {item.RedemptionPrice} грн\n" +
-                    $"Статус: {item.StatusToSaleOrReturn}\n" +
-                    (item.Status != ItemStatus.Зберігається ? $"Дата повернення/продажу: {item.SaleReturnDate:dd.MM.yyyy}\n" : "") +
-                    "------------------------\n" +
-                    "Дата друку: " + DateTime.Now.ToString("dd.MM.yyyy");
+            DataGridViewRow row = ArrayViev.SelectedRows[0];
+            Item item = database.GetItemById(Convert.ToInt32(row.Cells["Id"].Value));
+            Client client = database.GetClientById(item.ClientId);
 
+            // формуємо текст квітанції
+            // період збереження
+            string storagePeriodText = item.StoragePeriodDays > 0
+                ? $"Термін зберігання: {item.StoragePeriodDays} днів\n"
+                : "";
 
-                PrintDocument printDoc = new PrintDocument();
-                printDoc.PrintPage += (s, ev) =>
-                {
-                    Font font = new Font("Courier New", 14);
-                    ev.Graphics.DrawString(receiptText, font, Brushes.Black,
-                        new RectangleF(50, 50, ev.PageBounds.Width - 100, ev.PageBounds.Height - 100));
-                };
-
-                PrintDialog printDialog = new PrintDialog();
-                printDialog.Document = printDoc;
-
-                if (printDialog.ShowDialog() == DialogResult.OK)
-                {
-                    printDoc.Print();
-                }
+            // денна ставка
+            string percentRateText;
+            if (item.LoanAmount != 0 && item.StoragePeriodDays > 0)
+            {
+                decimal dailyRate = Math.Round((item.EstimatedValue / item.LoanAmount - 1)
+                                              / item.StoragePeriodDays * 100, 2);
+                percentRateText = $"Відсоткова ставка: {dailyRate}% на день\n";
             }
             else
             {
-                MessageBox.Show("Виберіть рядок для друку!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                percentRateText = ""; // не выводимо, якщо ділити не можна
+            }
+
+            // Нараховані відсотки и Сума до повернення (не показувати, якщо продано)
+            string interestText = item.Status == ItemStatus.Продано
+                ? "" // не виводимо якщо статус "Продано"
+                : $"Нараховані відсотки: {(item.RedemptionPrice - item.LoanAmount)} грн\n" +
+                  $"Сума до повернення: {item.RedemptionPrice} грн\n";
+
+            // покупець (якщо продано )
+            string buyerText = (item.Status == ItemStatus.Продано && item.Buyer != null)
+                ? $"Покупець: {item.Buyer.FullName}\nТелефон покупця: {item.Buyer.PhoneNumber}\n"
+                : "";
+
+            // дата повернення/продажи (если не на збереженні)
+            string returnDateText = item.Status != ItemStatus.Зберігається
+                ? $"Дата повернення/продажу: {item.SaleReturnDate:dd.MM.yyyy}\n"
+                : "";
+
+            string receiptText =
+                "КВИТАНЦІЯ ЛОМБАРДУ\n" +
+                "------------------------\n" +
+                $"ПІБ клієнта: {client.FullName}\n" +
+                $"Телефон: {client.PhoneNumber}\n" +
+                $"Категорія: {item.Category}\n" +
+                $"Назва предмета: {item.Name}\n" +
+                $"Дата застави: {item.DepositDate:dd.MM.yyyy}\n" +
+                $"Сума позики: {item.LoanAmount} грн\n" +
+                $"Оціночна вартість: {item.EstimatedValue} грн\n" +
+                storagePeriodText +
+                percentRateText +
+                interestText +
+                $"Статус: {item.StatusToSaleOrReturn}\n" +
+                buyerText +
+                returnDateText +
+                "------------------------\n" +
+                "Дата друку: " + DateTime.Now.ToString("dd.MM.yyyy");
+
+            // друк
+            PrintDocument printDoc = new PrintDocument();
+            printDoc.PrintPage += (s, ev) =>
+            {
+                using Font font = new Font("Courier New", 12);
+                ev.Graphics.DrawString(receiptText, font, Brushes.Black,
+                    new RectangleF(50, 50, ev.PageBounds.Width - 100, ev.PageBounds.Height - 100));
+            };
+
+            using PrintDialog printDialog = new PrintDialog
+            {
+                Document = printDoc
+            };
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                printDoc.Print();
             }
         }
     }

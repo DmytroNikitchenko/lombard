@@ -28,6 +28,12 @@ namespace lombard.View
                 labelSaleReturnDate.Visible = false;
                 labelSaleReturnPrice.Visible = false;
                 textSaleReturnPrice.Visible = false;
+
+                labelBuyerName.Visible = false;
+                labelBuyerNumber.Visible = false;
+                textBoxBuyerName.Visible = false;
+                textBoxBuyerNumber.Visible = false;
+
             }
             else
             {
@@ -42,7 +48,26 @@ namespace lombard.View
                     : foundItem.EstimatedValue.ToString();
                 labelSaleReturnPrice.Visible = true;
                 textSaleReturnPrice.Visible = true;
+
+                if (foundItem.Status == ItemStatus.Продано)
+                {
+                    labelBuyerName.Visible = true;
+                    labelBuyerNumber.Visible = true;
+                    textBoxBuyerName.Visible = true;
+                    textBoxBuyerNumber.Visible = true;
+
+                    textBoxBuyerName.Text = foundItem.Buyer.FullName;
+                    textBoxBuyerNumber.Text = foundItem.Buyer.PhoneNumber;
+                }
+                else
+                {
+                    labelBuyerName.Visible = false;
+                    labelBuyerNumber.Visible = false;
+                    textBoxBuyerName.Visible = false;
+                    textBoxBuyerNumber.Visible = false;
+                }
             }
+
 
             textClientId.Text = foundClient.Id.ToString();
             textClientName.Text = foundClient.FullName;

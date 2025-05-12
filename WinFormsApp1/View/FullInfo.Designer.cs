@@ -56,13 +56,17 @@
             textSaleReturnPrice = new TextBox();
             textBoxStatusToSaleOrReturn = new TextBox();
             labelStatusToSaleOrReturn = new Label();
+            textBoxBuyerName = new TextBox();
+            labelBuyerName = new Label();
+            labelBuyerNumber = new Label();
+            textBoxBuyerNumber = new TextBox();
             SuspendLayout();
             // 
             // labelClientPhone
             // 
             labelClientPhone.AutoSize = true;
             labelClientPhone.Font = new Font("Segoe UI", 12F);
-            labelClientPhone.Location = new Point(12, 367);
+            labelClientPhone.Location = new Point(12, 396);
             labelClientPhone.Name = "labelClientPhone";
             labelClientPhone.Size = new Size(188, 21);
             labelClientPhone.TabIndex = 19;
@@ -72,7 +76,7 @@
             // 
             labelClientName.AutoSize = true;
             labelClientName.Font = new Font("Segoe UI", 12F);
-            labelClientName.Location = new Point(12, 346);
+            labelClientName.Location = new Point(12, 375);
             labelClientName.Name = "labelClientName";
             labelClientName.Size = new Size(92, 21);
             labelClientName.TabIndex = 18;
@@ -82,7 +86,7 @@
             // 
             labelClientId.AutoSize = true;
             labelClientId.Font = new Font("Segoe UI", 12F);
-            labelClientId.Location = new Point(12, 325);
+            labelClientId.Location = new Point(12, 354);
             labelClientId.Name = "labelClientId";
             labelClientId.Size = new Size(83, 21);
             labelClientId.TabIndex = 17;
@@ -162,7 +166,7 @@
             // 
             labelSaleReturnDate.AutoSize = true;
             labelSaleReturnDate.Font = new Font("Segoe UI", 12F);
-            labelSaleReturnDate.Location = new Point(12, 241);
+            labelSaleReturnDate.Location = new Point(12, 226);
             labelSaleReturnDate.Name = "labelSaleReturnDate";
             labelSaleReturnDate.Size = new Size(207, 21);
             labelSaleReturnDate.TabIndex = 21;
@@ -242,7 +246,7 @@
             // 
             textSaleReturnDate.BackColor = SystemColors.Window;
             textSaleReturnDate.ForeColor = SystemColors.WindowText;
-            textSaleReturnDate.Location = new Point(315, 243);
+            textSaleReturnDate.Location = new Point(315, 228);
             textSaleReturnDate.Name = "textSaleReturnDate";
             textSaleReturnDate.ReadOnly = true;
             textSaleReturnDate.Size = new Size(298, 23);
@@ -252,7 +256,7 @@
             // 
             textClientId.BackColor = SystemColors.Window;
             textClientId.ForeColor = SystemColors.WindowText;
-            textClientId.Location = new Point(315, 327);
+            textClientId.Location = new Point(315, 356);
             textClientId.Name = "textClientId";
             textClientId.ReadOnly = true;
             textClientId.Size = new Size(298, 23);
@@ -262,7 +266,7 @@
             // 
             textClientName.BackColor = SystemColors.Window;
             textClientName.ForeColor = SystemColors.WindowText;
-            textClientName.Location = new Point(315, 348);
+            textClientName.Location = new Point(315, 377);
             textClientName.Name = "textClientName";
             textClientName.ReadOnly = true;
             textClientName.Size = new Size(298, 23);
@@ -272,7 +276,7 @@
             // 
             textClientPhone.BackColor = SystemColors.Window;
             textClientPhone.ForeColor = SystemColors.WindowText;
-            textClientPhone.Location = new Point(315, 369);
+            textClientPhone.Location = new Point(315, 398);
             textClientPhone.Name = "textClientPhone";
             textClientPhone.ReadOnly = true;
             textClientPhone.Size = new Size(298, 23);
@@ -302,7 +306,7 @@
             // 
             labelSaleReturnPrice.AutoSize = true;
             labelSaleReturnPrice.Font = new Font("Segoe UI", 12F);
-            labelSaleReturnPrice.Location = new Point(12, 262);
+            labelSaleReturnPrice.Location = new Point(12, 247);
             labelSaleReturnPrice.Name = "labelSaleReturnPrice";
             labelSaleReturnPrice.Size = new Size(295, 21);
             labelSaleReturnPrice.TabIndex = 35;
@@ -312,7 +316,7 @@
             // 
             textSaleReturnPrice.BackColor = SystemColors.Window;
             textSaleReturnPrice.ForeColor = SystemColors.WindowText;
-            textSaleReturnPrice.Location = new Point(315, 265);
+            textSaleReturnPrice.Location = new Point(315, 250);
             textSaleReturnPrice.Name = "textSaleReturnPrice";
             textSaleReturnPrice.ReadOnly = true;
             textSaleReturnPrice.Size = new Size(298, 23);
@@ -338,11 +342,49 @@
             labelStatusToSaleOrReturn.TabIndex = 37;
             labelStatusToSaleOrReturn.Text = "Статус на до продажу:";
             // 
+            // textBoxBuyerName
+            // 
+            textBoxBuyerName.Location = new Point(315, 294);
+            textBoxBuyerName.Name = "textBoxBuyerName";
+            textBoxBuyerName.Size = new Size(298, 23);
+            textBoxBuyerName.TabIndex = 39;
+            // 
+            // labelBuyerName
+            // 
+            labelBuyerName.AutoSize = true;
+            labelBuyerName.Font = new Font("Segoe UI", 12F);
+            labelBuyerName.Location = new Point(15, 292);
+            labelBuyerName.Name = "labelBuyerName";
+            labelBuyerName.Size = new Size(105, 21);
+            labelBuyerName.TabIndex = 40;
+            labelBuyerName.Text = "Ім'я покупця:";
+            // 
+            // labelBuyerNumber
+            // 
+            labelBuyerNumber.AutoSize = true;
+            labelBuyerNumber.Font = new Font("Segoe UI", 12F);
+            labelBuyerNumber.Location = new Point(15, 313);
+            labelBuyerNumber.Name = "labelBuyerNumber";
+            labelBuyerNumber.Size = new Size(198, 21);
+            labelBuyerNumber.TabIndex = 42;
+            labelBuyerNumber.Text = "Номер телефону покупця:";
+            // 
+            // textBoxBuyerNumber
+            // 
+            textBoxBuyerNumber.Location = new Point(315, 315);
+            textBoxBuyerNumber.Name = "textBoxBuyerNumber";
+            textBoxBuyerNumber.Size = new Size(298, 23);
+            textBoxBuyerNumber.TabIndex = 41;
+            // 
             // FullInfo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(854, 426);
+            ClientSize = new Size(854, 438);
+            Controls.Add(labelBuyerNumber);
+            Controls.Add(textBoxBuyerNumber);
+            Controls.Add(labelBuyerName);
+            Controls.Add(textBoxBuyerName);
             Controls.Add(textBoxStatusToSaleOrReturn);
             Controls.Add(labelStatusToSaleOrReturn);
             Controls.Add(textSaleReturnPrice);
@@ -371,7 +413,7 @@
             Controls.Add(labelEstimatedValue);
             Controls.Add(labelItemName);
             Controls.Add(labelItemId);
-            MinimumSize = new Size(653, 444);
+            MinimumSize = new Size(653, 477);
             Name = "FullInfo";
             Text = "Повна інформація";
             ResumeLayout(false);
@@ -407,5 +449,9 @@
         private TextBox textSaleReturnPrice;
         private TextBox textBoxStatusToSaleOrReturn;
         private Label labelStatusToSaleOrReturn;
+        private TextBox textBoxBuyerName;
+        private Label labelBuyerName;
+        private Label labelBuyerNumber;
+        private TextBox textBoxBuyerNumber;
     }
 }
