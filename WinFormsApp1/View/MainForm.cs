@@ -29,7 +29,7 @@ namespace lombard.View
             dataGridView.Columns["ClientId"].HeaderText = "ID клієнта";
             dataGridView.Columns["SaleReturnDate"].HeaderText = "Дата продажу/повернення";
             dataGridView.Columns["Category"].HeaderText = "Категорія";
-            dataGridView.Columns["RedemptionPrice"].HeaderText = "Викупна ціна";
+            dataGridView.Columns["RedemptionPrice"].HeaderText = "Викупна ціна (грн.)";
             dataGridView.Columns["StatusToSaleOrReturn"].HeaderText = "Статус для продажу";
         }
         public void RefreshDataGrid()

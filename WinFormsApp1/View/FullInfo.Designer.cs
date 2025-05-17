@@ -70,7 +70,7 @@
             labelClientPhone.Name = "labelClientPhone";
             labelClientPhone.Size = new Size(188, 21);
             labelClientPhone.TabIndex = 19;
-            labelClientPhone.Text = "Номер телефону клієнта:";
+            labelClientPhone.Text = "Номер телефона клієнта:";
             // 
             // labelClientName
             // 
@@ -338,9 +338,9 @@
             labelStatusToSaleOrReturn.Font = new Font("Segoe UI", 12F);
             labelStatusToSaleOrReturn.Location = new Point(12, 177);
             labelStatusToSaleOrReturn.Name = "labelStatusToSaleOrReturn";
-            labelStatusToSaleOrReturn.Size = new Size(150, 21);
+            labelStatusToSaleOrReturn.Size = new Size(157, 21);
             labelStatusToSaleOrReturn.TabIndex = 37;
-            labelStatusToSaleOrReturn.Text = "Статус до продажу:";
+            labelStatusToSaleOrReturn.Text = "Статус для продажу:";
             // 
             // textBoxBuyerName
             // 
@@ -367,7 +367,7 @@
             labelBuyerNumber.Name = "labelBuyerNumber";
             labelBuyerNumber.Size = new Size(198, 21);
             labelBuyerNumber.TabIndex = 42;
-            labelBuyerNumber.Text = "Номер телефону покупця:";
+            labelBuyerNumber.Text = "Номер телефона покупця:";
             // 
             // textBoxBuyerNumber
             // 

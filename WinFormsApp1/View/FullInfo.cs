@@ -37,9 +37,7 @@ namespace lombard.View
             }
             else
             {
-                textSaleReturnDate.Text = foundItem.SaleReturnDate == DateTime.MinValue
-                    ? "Зберігається"
-                    : foundItem.SaleReturnDate.ToShortDateString();
+                textSaleReturnDate.Text = foundItem.SaleReturnDate.ToShortDateString();
                 textSaleReturnDate.Visible = true;
                 labelSaleReturnDate.Visible = true;
 
