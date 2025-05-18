@@ -78,6 +78,7 @@
             // textBoxEstimatedValue
             // 
             textBoxEstimatedValue.Location = new Point(158, 67);
+            textBoxEstimatedValue.MaxLength = 999999999;
             textBoxEstimatedValue.Name = "textBoxEstimatedValue";
             textBoxEstimatedValue.Size = new Size(100, 23);
             textBoxEstimatedValue.TabIndex = 3;
@@ -113,6 +114,7 @@
             // textBoxLoanAmount
             // 
             textBoxLoanAmount.Location = new Point(158, 96);
+            textBoxLoanAmount.MaxLength = 999999999;
             textBoxLoanAmount.Name = "textBoxLoanAmount";
             textBoxLoanAmount.Size = new Size(100, 23);
             textBoxLoanAmount.TabIndex = 7;
@@ -121,6 +123,7 @@
             // textBoxStoragePeriodDays
             // 
             textBoxStoragePeriodDays.Location = new Point(158, 125);
+            textBoxStoragePeriodDays.MaxLength = 365;
             textBoxStoragePeriodDays.Name = "textBoxStoragePeriodDays";
             textBoxStoragePeriodDays.Size = new Size(100, 23);
             textBoxStoragePeriodDays.TabIndex = 8;
