@@ -40,7 +40,7 @@ namespace lombard.View
                         FullName = textBoxFullName.Text,
                         PhoneNumber = textBoxBuyerNumber.Text
                     };
-                    database.AddClient(client);                
+                    database.AddClient(client);
                 }
 
                 Item item = database.GetItemById(Convert.ToInt32(selectedRow.Cells["Id"].Value));

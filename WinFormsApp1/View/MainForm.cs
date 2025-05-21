@@ -43,43 +43,34 @@ namespace lombard.View
         }
         private void ArrayViev_SelectionChanged(object sender, EventArgs e)
         {
-            if (ArrayViev.SelectedRows.Count > 0)
-            {
-                DataGridViewRow selectedRow = ArrayViev.SelectedRows[0];
-                var statusCell = selectedRow.Cells["Status"].Value;
-
-                if (statusCell != null)
-                {
-                    string status = statusCell.ToString();
-
-                    bool isActive = status != ItemStatus.Повернено.ToString() && status != ItemStatus.Продано.ToString();
-
-                    if (isActive)
-                    {
-                        int storageDays = Convert.ToInt32(selectedRow.Cells["StoragePeriodDays"].Value);
-                        DateTime depositDate = Convert.ToDateTime(selectedRow.Cells["DepositDate"].Value);
-                        DateTime storageEndDate = depositDate.AddDays(storageDays);
-
-
-                        buttonSell.Enabled = storageEndDate <= DateTime.Now;
-
-                        buttonSell.Enabled = storageEndDate <= DateTime.Now;
-
-                        buttonRefound.Enabled = storageEndDate > DateTime.Now;
-                    }
-                    else
-                    {
-                        buttonSell.Enabled = false;
-                        buttonRefound.Enabled = false;
-                    }
-                }
-            }
-            else
+            if (ArrayViev.SelectedRows.Count <= 0)
             {
                 buttonRefound.Enabled = false;
                 buttonSell.Enabled = false;
+                return;
             }
+
+            DataGridViewRow selectedRow = ArrayViev.SelectedRows[0];
+            var statusCell = selectedRow.Cells["Status"].Value;            
+
+            string status = statusCell.ToString();
+            bool isActive = status != ItemStatus.Повернено.ToString() && status != ItemStatus.Продано.ToString();
+
+            if (!isActive)
+            {
+                buttonSell.Enabled = false;
+                buttonRefound.Enabled = false;
+                return;
+            }
+
+            int storageDays = Convert.ToInt32(selectedRow.Cells["StoragePeriodDays"].Value);
+            DateTime depositDate = Convert.ToDateTime(selectedRow.Cells["DepositDate"].Value);
+            DateTime storageEndDate = depositDate.AddDays(storageDays);
+
+            buttonSell.Enabled = storageEndDate <= DateTime.Now;
+            buttonRefound.Enabled = storageEndDate > DateTime.Now;
         }
+
         private void buttonToAddForm_Click(object sender, EventArgs e)
         {
             ItemAddForm itemAddForm = new ItemAddForm(this, database);
