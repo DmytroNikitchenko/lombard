@@ -16,7 +16,6 @@ namespace lombard.View
 
             FormatColumnsNames(ArrayViev);
         }
-
         public static void FormatColumnsNames(DataGridView dataGridView)
         {
             dataGridView.Columns["Id"].HeaderText = "ID";
@@ -51,7 +50,7 @@ namespace lombard.View
             }
 
             DataGridViewRow selectedRow = ArrayViev.SelectedRows[0];
-            var statusCell = selectedRow.Cells["Status"].Value;            
+            var statusCell = selectedRow.Cells["Status"].Value;
 
             string status = statusCell.ToString();
             bool isActive = status != ItemStatus.Повернено.ToString() && status != ItemStatus.Продано.ToString();

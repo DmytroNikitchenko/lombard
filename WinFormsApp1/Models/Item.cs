@@ -29,7 +29,7 @@ namespace lombard.Models
 
                 return (int)(LoanAmount + interest);
             }
-        } 
+        }
         public DateTime DepositDate { get; set; } // дата внеску
         public int StoragePeriodDays { get; set; } // період збереження
         public string StatusToSaleOrReturn
