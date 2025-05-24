@@ -73,7 +73,7 @@ namespace lombard.View
 
         private void buttonToAddForm_Click(object sender, EventArgs e)
         {
-            ItemAddForm itemAddForm = new ItemAddForm(this, database);
+            AddItemForm itemAddForm = new AddItemForm(this, database);
             itemAddForm.Show();
         }
         private void buttonCheckInfo_Click(object sender, EventArgs e)

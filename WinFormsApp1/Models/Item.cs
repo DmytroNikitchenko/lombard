@@ -5,12 +5,12 @@ namespace lombard.Models
     [Serializable]
     public class Item //клас предмета
     {
-        public int Id { get; set; }
-        public string Category { get; set; } = "";
-        public string Name { get; set; } = "";
-        public decimal EstimatedValue { get; set; }
-        public decimal LoanAmount { get; set; }
-        public int RedemptionPrice
+        public int Id { get; set; } //id предмета
+        public string Category { get; set; } = ""; //категорія предмета
+        public string Name { get; set; } = ""; //назва предмета
+        public decimal EstimatedValue { get; set; } //оціночна вартість
+        public decimal LoanAmount { get; set; } //сума кредиту
+        public int RedemptionPrice //викупна ціна
         {
             get
             {
@@ -29,9 +29,9 @@ namespace lombard.Models
 
                 return (int)(LoanAmount + interest);
             }
-        }
-        public DateTime DepositDate { get; set; }
-        public int StoragePeriodDays { get; set; }
+        } 
+        public DateTime DepositDate { get; set; } // дата внеску
+        public int StoragePeriodDays { get; set; } // період збереження
         public string StatusToSaleOrReturn
         {
             get
@@ -50,12 +50,12 @@ namespace lombard.Models
                     return DateTime.Now <= endDate ? "Чекає на повернення" : "Продається";
                 }
             }
-        }
-        public ItemStatus Status { get; set; }
-        public int ClientId { get; set; }
-        public DateTime SaleReturnDate { get; set; }
+        } //статус до продажу
+        public ItemStatus Status { get; set; } //статус на складі
+        public int ClientId { get; set; } //id клієнта хто внес предмет
+        public DateTime SaleReturnDate { get; set; } //дата продажу/повернення
 
-        [Browsable(false)]
-        public Client Buyer { get; set; }
+        [Browsable(false)] //не показується в datagridview
+        public Client Buyer { get; set; } //покупець
     }
 }

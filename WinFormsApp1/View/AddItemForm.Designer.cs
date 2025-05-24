@@ -1,6 +1,6 @@
 ﻿namespace lombard.View
 {
-    partial class ItemAddForm
+    partial class AddItemForm
     {
         /// <summary>
         /// Required designer variable.

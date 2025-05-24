@@ -3,12 +3,12 @@ using System.Data;
 
 namespace lombard.View
 {
-    public partial class ItemAddForm : Form //Форма додавання елементів
+    public partial class AddItemForm : Form //Форма додавання елементів
     {
         private MainForm mainForm;
         private PawnshopDatabase database;
         private Client client;
-        public ItemAddForm(MainForm mainForm, PawnshopDatabase database)
+        public AddItemForm(MainForm mainForm, PawnshopDatabase database)
         {
             InitializeComponent();
             this.database = database;
